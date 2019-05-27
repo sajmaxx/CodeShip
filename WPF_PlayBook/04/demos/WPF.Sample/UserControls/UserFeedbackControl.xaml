@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WPF.Sample.UserControls.UserFeedbackControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WPF.Sample.UserControls"
+             xmlns:vm="clr-namespace:WPF.Sample.ViewModelLayer;assembly=WPF.Sample.ViewModelLayer"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Style="{StaticResource screenStyle}">
+  <UserControl.Resources>
+    <vm:UserFeedbackViewModel x:Key="viewModel" />
+  </UserControl.Resources>
+  <Border Style="{StaticResource screenBorder}">
+    <StackPanel>
+      <TextBlock Text="User Feedback Screen"
+                 FontFamily="18"
+                 Margin="20,80" />
+      <Button Content="Close"
+              HorizontalAlignment="Left"
+              Click="CloseButton_Click" />
+    </StackPanel>
+  </Border>
+</UserControl>
