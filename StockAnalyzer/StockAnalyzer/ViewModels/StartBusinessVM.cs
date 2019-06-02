@@ -32,6 +32,20 @@ namespace StockAnalyzer.ViewModels
         public static void ForceMarketOpen()
         {
             NYSMrk = NYSMrk?? new NYSMarket();
+
+            SPMrk = SPMrk?? new SPMarket();
+        }
+
+        public static ITradeMarket ChooseMarket(int mknum)
+        {
+            switch (mknum)
+            {
+                case 1: return NYSMrk;
+
+                case 2: return SPMrk;
+
+                default : return null;
+            }
         }
     }
 }

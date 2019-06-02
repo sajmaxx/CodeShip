@@ -18,7 +18,7 @@ namespace StockAnalyzer.Models
 
         public void Buy(ITradeData tradeob)
         {
-            throw new NotImplementedException();
+            _stockList.Add(tradeob);
         }
 
         public bool MarketOpen()
@@ -45,12 +45,13 @@ namespace StockAnalyzer.Models
 
         public void Buy(ITradeData tradeob)
         {
-            throw new NotImplementedException();
+           _stockList.Add(tradeob);
         }
 
         public bool MarketOpen()
         {
-            throw new NotImplementedException();
+            _stockList.Clear();
+            return true;
         }
 
         public void Sell(ITradeData tradeob)
