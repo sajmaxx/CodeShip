@@ -135,5 +135,39 @@ namespace StockAnalyzer
             }
 
         }
+
+        private void ButtonCalc_Click(object sender, RoutedEventArgs e)
+        {
+            List<int> IdList = new List<int>();
+
+            IdList.Add(33);
+            IdList.Add(44);
+            IdList.Add(45);
+            IdList.Add(34);
+            IdList.Add(32);
+            IdList.Add(52);
+            IdList.Add(62);
+            IdList.Add(82);
+
+
+            IdList.Remove(32);
+
+            foreach (var val in IdList.Take(8).Where(x => x <= 66))
+            {
+                Console.WriteLine("Idlist member is " + val.ToString());
+            }
+
+            var DesFilter = IdList.Where(x => ((x > 33) &&(x <77))).Take(5);
+
+
+            Console.WriteLine("LINQ QUery Statement");
+
+
+            foreach (var malue in DesFilter)
+            {
+                Console.WriteLine("LINQ FIlterList {0}", malue);
+            }
+
+        }
     }
 }

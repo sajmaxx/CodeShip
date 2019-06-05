@@ -19,8 +19,9 @@
                 </ListBox.RenderTransform>
             </ListBox>
         </StackPanel>
-        <StackPanel Margin="242,221,198,139">
-            <Button x:Name="ButtonStart" Height="50" Click="ButtonStart_Click">Start The Machine</Button>
+        <StackPanel Margin="242,221,198,98">
+            <Button x:Name="ButtonCalc" Height="44" Margin="180,0,0,0" RenderTransformOrigin="0.5,0.5" Content="Do the works" Click="ButtonCalc_Click"/>
+            <Button x:Name="ButtonStart" Height="50" Click="ButtonStart_Click" Margin="0,0,224,0" Content="Start The Machine"/>
         </StackPanel>
     </Grid>
 </Window>
