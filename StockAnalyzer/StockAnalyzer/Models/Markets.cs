@@ -41,21 +41,23 @@ namespace StockAnalyzer.Models
         public NYSMarket()
         {
             _stockList = new List<ITradeData>();
+            bool zerostate = _stockList.Count == 0;
+            //UseTheOtherMethod
         }
 
         public void Buy(ITradeData tradeob)
-        {
+        {//Deprecate this for now!
            _stockList.Add(tradeob);
         }
 
         public bool MarketOpen()
-        {
+        {//Deprecate this for now!
             _stockList.Clear();
             return true;
         }
 
         public void Sell(ITradeData tradeob)
-        {
+        {//Deprecate this for now!
             throw new NotImplementedException();
         }
     }

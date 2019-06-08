@@ -51,15 +51,15 @@ namespace StockAnalyzer
             IdList.Remove(32);
 
 
-           
-            IdList.RemoveAll(x => (x > 35) && (x < 56) );
+
+            IdList.RemoveAll(x => (x > 35) && (x < 56));
 
 
 
-             List<string> NameList = new List<string>
-             {
-                 "Mon"  , " Tue", "Fri"
-             };
+            List<string> NameList = new List<string>
+            {
+                "Mon", " Tue", "Fri"
+            };
 
         }
 
@@ -68,70 +68,70 @@ namespace StockAnalyzer
         {
             Dictionary<string, int> BioDic = new Dictionary<string, int>();
 
-            
-            BioDic.Add("saj",33);
-            BioDic.Add("raj",43);
-            BioDic.Add("taj",53);
-            BioDic.Add("taj2",63);
-            BioDic.Add("taj3",93);
-            BioDic.Add("taj4",103);
 
-            
+            BioDic.Add("saj", 33);
+            BioDic.Add("raj", 43);
+            BioDic.Add("taj", 53);
+            BioDic.Add("taj2", 63);
+            BioDic.Add("taj3", 93);
+            BioDic.Add("taj4", 103);
+
+
             var Mahvalue = BioDic["raj"];
 
-           Mahvalue = Mahvalue + 100;
+            Mahvalue = Mahvalue + 100;
 
-           BioDic.Add("James",52);
-
-
-           int ageis; 
-           BioDic.TryGetValue("saj", out ageis);
+            BioDic.Add("James", 52);
 
 
+            int ageis;
+            BioDic.TryGetValue("saj", out ageis);
 
-           foreach (int age in BioDic.Values)
-           {
-               Console.WriteLine("Age is " + age.ToString());
-           }
 
-           foreach (var nameagpair in BioDic)
-           {
-               if (nameagpair.Key == "saj")
-               {
-                   MessageBox.Show("My Nam is " + nameagpair.Key);
-                   break;
-               }
-           }
+
+            foreach (int age in BioDic.Values)
+            {
+                Console.WriteLine("Age is " + age.ToString());
+            }
+
+            foreach (var nameagpair in BioDic)
+            {
+                if (nameagpair.Key == "saj")
+                {
+                    MessageBox.Show("My Nam is " + nameagpair.Key);
+                    break;
+                }
+            }
 
         }
 
- 
+
 
         private void ButtonStart_Click(object sender, RoutedEventArgs e)
         {
             MakeMyListofInts();
             MakeBioDictionary();
-            
+
             StartBusinessVM.ForceMarketOpen();
 
             ITradeMarket someTrade = StartBusinessVM.ChooseMarket(1);
 
-            StockData BOE  = new StockData(1);
+            StockData BOE = new StockData(1);
 
             if (someTrade is NYSMarket)
             {
-                var saleprice = BOE.MarketPrice??200;
-                var marketrate = BOE.PurchasedPrice??200;
-                   
-                someTrade.Buy((ITradeData)BOE);
+                var saleprice = BOE.MarketPrice ?? 200;
+                var marketrate = BOE.PurchasedPrice ?? 200;
 
-                ITradeData itrade = (ITradeData)BOE;
-               ChangeTheTrade(ref itrade);
+                someTrade.Buy((ITradeData) BOE);
 
-               BOE.MarketPrice = BOE.MarketPrice??300;
-               BOE.PurchasedPrice = BOE.PurchasedPrice??400;
+                ITradeData itrade = (ITradeData) BOE;
+                ChangeTheTrade(ref itrade);
 
-               MakeMyListofInts();
+                BOE.MarketPrice = BOE.MarketPrice ?? 300;
+                BOE.PurchasedPrice = BOE.PurchasedPrice ?? 400;
+
+                MakeMyListofInts();
 
             }
 
@@ -139,7 +139,9 @@ namespace StockAnalyzer
 
         private void ButtonCalc_Click(object sender, RoutedEventArgs e)
         {
-            ImmutableArray int[] mama = ImmutableArray[4] { 4,6,8};
+            ImmutableArray<int> mama = ImmutableArray.Create(4,5,7,7);
+
+            ImmutableArray <double> doublewam = ImmutableArray.Create(44.0, 44.5, 56.33, 56.747);
 
             List<int> IdList = new List<int>();
 
@@ -160,7 +162,7 @@ namespace StockAnalyzer
                 Console.WriteLine("Idlist member is " + val.ToString());
             }
 
-            var DesFilter = IdList.Where(x => ((x > 33) &&(x <77))).Take(5);
+            var DesFilter = IdList.Where(x => ((x > 33) && (x < 77))).Take(5);
 
 
             Console.WriteLine("LINQ QUery Statement");
@@ -171,6 +173,21 @@ namespace StockAnalyzer
                 Console.WriteLine("LINQ FIlterList {0}", malue);
             }
 
+            UseTheOtherMethod();
         }
-    }
+
+        //Named Arguements Example
+        void DoThisWorkLater(bool setonce, int alphacount)
+        {
+            int work = alphacount + 33;
+        }
+
+        void UseTheOtherMethod()
+        {
+            DoThisWorkLater(setonce:true, alphacount:55);
+        }
+
+
+
+}
 }

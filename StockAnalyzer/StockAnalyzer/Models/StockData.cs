@@ -15,6 +15,9 @@ namespace StockAnalyzer.Models
             Quantity = 0;
         }
 
+
+        //List UseTheOtherMethod _stockList
+
         public StockData(int quanta)
         {
             Quantity = quanta;
@@ -24,10 +27,13 @@ namespace StockAnalyzer.Models
 
         }
 
+        // What is life? os windows 10 is life?
         public double? MarketPrice { get; set; }
         
+        // What is life? os windows 10 is life?
         public double? PurchasedPrice { get; set; }
         
-        public int? Quantity { get; set; }
+       // What is life? os windows 10 is life?
+       public int? Quantity { get; set; }
     }
 }
