@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using  StockAnalyzer.ViewModels;
 using StockAnalyzer.Models;
+using System.Collections.Immutable;
 
 namespace StockAnalyzer
 {
@@ -138,6 +139,8 @@ namespace StockAnalyzer
 
         private void ButtonCalc_Click(object sender, RoutedEventArgs e)
         {
+            ImmutableArray int[] mama = ImmutableArray[4] { 4,6,8};
+
             List<int> IdList = new List<int>();
 
             IdList.Add(33);
