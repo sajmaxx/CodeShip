@@ -1,0 +1,46 @@
+﻿<Window x:Class="DataTemplateExampleStart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataTemplateExampleStart"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+	
+	<Window.Resources>
+		<CollectionViewSource x:Key="SampleData" Source="{Binding Employees}" />
+        <Style TargetType="ListBoxItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding EmployeeName}" Value="Frank Hampton"> 
+                    <Setter Property="Background" Value="AliceBlue"/>
+                    <Setter Property="Foreground" Value="PaleVioletRed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+	</Window.Resources>
+       
+	<Grid>
+		<!--<ListBox ItemsSource="{Binding Source={StaticResource EmployeeData}}"-->
+		<ListBox ItemsSource="{Binding Employees}"
+                 Background="#FFC9F39E">
+             <ListBox.ItemTemplate>
+                 <DataTemplate> <!-- SajanM  Customizing a Data List using DataTemplate!-->
+                      <StackPanel Height="37" Width="250" Grid.RowSpan="2">
+                          <Grid >
+                             <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="Auto"/>
+                                 <ColumnDefinition Width="*"/>
+                             </Grid.ColumnDefinitions>   
+                              <TextBlock Text="Employee : " FontWeight="Bold" Grid.Column="0" Height="Auto"
+                                       />
+                              <TextBlock Text="{Binding Path=EmployeeName}" Grid.Column="1" HorizontalAlignment="Left"/>
+
+                          </Grid>
+                      </StackPanel>
+                 </DataTemplate>
+             </ListBox.ItemTemplate>
+        </ListBox> 
+
+
+	</Grid>
+</Window>

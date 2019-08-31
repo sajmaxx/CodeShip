@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseControlTemplateApp", "UseControlTemplateApp\UseControlTemplateApp.csproj", "{86DDDA5A-202A-4853-AA50-62465EB0889E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86DDDA5A-202A-4853-AA50-62465EB0889E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DDDA5A-202A-4853-AA50-62465EB0889E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DDDA5A-202A-4853-AA50-62465EB0889E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DDDA5A-202A-4853-AA50-62465EB0889E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F08BA29-40D8-49E1-9FDF-06EB009800D1}
+	EndGlobalSection
+EndGlobal

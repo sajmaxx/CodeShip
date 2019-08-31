@@ -12,11 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Dapplo.Log;
-using DataCon101.Models;
 
-
-namespace DataCon101
+namespace ContentAsObj
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -27,17 +24,23 @@ namespace DataCon101
         {
             InitializeComponent();
 
-            LogSource mahLogger = new LogSource();
+            //ASSIGNING DIFFERENT KINDS OF OBJECTS as Contents to Buttons
 
-            mahLogger.Info().WriteLine("Do this now");
-
-            WPFCustomMessageBox.CustomMessageBox.Show("Wwawa");
-
-            AbstractCars somecar = new AbstractCars(30,"wawa");
-
-            somecar.CheckNullableParams();
+            button1.Content = "hello mars";
 
 
+            var flowerimage = new Image();
+            flowerimage.Source = new BitmapImage( new Uri("Images/flower.jpg", UriKind.Relative));
+            button2.Content = flowerimage;
+
+
+            button3.Content = new Models.TouristMan
+            {
+                Description = "Israel visit 2020",
+                MultiDay = false,
+                TourId = 777,
+                TourName = "Visit to Jerusalem"
+            };
 
         }
     }

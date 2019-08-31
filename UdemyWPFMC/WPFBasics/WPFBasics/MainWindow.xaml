@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBasics"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Margin="130">
+            <Label x:Name="FU" Content="LALA LAND" Margin="0,0,0,10"> 
+            </Label >
+            <TextBox Text="0" Margin="0,0,0,10"/>
+            <TextBox Text="0" Margin="0,0,0,10"/>
+            <Button Name="OpenA" Content="Open New Dialog" Margin="0,0,0,10" Background="OrangeRed"
+                    Foreground="Yellow"
+                    Click="OpenA_Click" />
+            <Button Content="Close This Scrap"
+                    Click="Button_Click" Background="Azure"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

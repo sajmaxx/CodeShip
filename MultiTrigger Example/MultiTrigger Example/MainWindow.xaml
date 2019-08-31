@@ -1,0 +1,38 @@
+﻿<Window x:Class="MultiTrigger_Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiTrigger_Example"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Text" Value="Hello" />
+                        <Condition Property="IsEnabled" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Foreground" Value="Red" />
+                        <Setter Property="Background" Value="Yellow" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name="textBox" FontSize="20" HorizontalAlignment="Left" Height="auto" Width="150" Margin="168,146,0,0" TextWrapping="Wrap" 
+                     Text="TextBox" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkEnabled, Path=IsChecked}"/>
+            <CheckBox x:Name="chkEnabled" Content="Enable text box" HorizontalAlignment="Center" Margin="10"
+                      />
+            <TextBox x:Name="bentoBox" Height="107"
+                     TextWrapping="Wrap"
+                     Text="BENTO BENTO" IsEnabled="{Binding ElementName=chkEnabled, Path=IsChecked}"
+                     Margin="168,0,199,0" />
+        </StackPanel>
+        
+    </Grid>
+</Window>

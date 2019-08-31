@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DataTemplateExampleStart.Properties">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/DataTemplateExampleStart;component/Dictionary1.xaml" />
+		<ResourceDictionary Source="/DataTemplateExampleStart;component/ListBoxStyle.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

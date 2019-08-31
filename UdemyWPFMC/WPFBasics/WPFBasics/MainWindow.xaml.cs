@@ -12,11 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Dapplo.Log;
-using DataCon101.Models;
 
-
-namespace DataCon101
+namespace WPFBasics
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,18 +23,17 @@ namespace DataCon101
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            LogSource mahLogger = new LogSource();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+          Close();
+        }
 
-            mahLogger.Info().WriteLine("Do this now");
-
-            WPFCustomMessageBox.CustomMessageBox.Show("Wwawa");
-
-            AbstractCars somecar = new AbstractCars(30,"wawa");
-
-            somecar.CheckNullableParams();
-
-
+        private void OpenA_Click(object sender, RoutedEventArgs e)
+        {
+            var a = 100;
+            a = a  + 100;
 
         }
     }

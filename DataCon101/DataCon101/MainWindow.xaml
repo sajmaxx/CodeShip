@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel DataContext="DockPanel DC..">
+        <StackPanel DataContext="DockPanel acDC">
             <StackPanel>
                 <DockPanel Margin="50" >
                     <TextBox x:Name="txtBox1" Width="150" DockPanel.Dock="Top" Margin="0,3" ToolTip="First" Text="{Binding Mode=OneWay}"/>
@@ -15,6 +15,9 @@
                     <TextBox x:Name="txtBox3" Width="150" DockPanel.Dock="Top" Margin="0,3" ToolTip="Third" Text="{Binding Mode=OneWay}"/>
                 </DockPanel>
             </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            
         </StackPanel>
     </Grid>
 </Window>
