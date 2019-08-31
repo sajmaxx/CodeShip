@@ -1,0 +1,18 @@
+﻿<Window x:Class="Ch1SimpAttach.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ch1SimpAttach"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas>
+            <RepeatButton Content="Move" Grid.Row="1"
+                          Click="RepeatButton_Click" />
+            <RepeatButton Content="Rotate" Canvas.Left="100" Grid.Row="3" Grid.Column="2" Click="RotateButt_Click"/>
+            <RepeatButton Content="ScrewMove" Canvas.Left="200" Click="ScrewMove_Click"/>
+            <Rectangle x:Name="_rect" Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="5" Canvas.Left="30" Canvas.Top="40" local:RotationManager.Angle="45"/>
+        </Canvas>
+    </Grid>
+</Window>
