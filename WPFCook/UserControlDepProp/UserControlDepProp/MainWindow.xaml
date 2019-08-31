@@ -1,0 +1,17 @@
+﻿<Window x:Class="UserControlDepProp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserControlDepProp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+<StackPanel>
+    <local:SUserCon x:Name="sp500Stock"/>
+    <TextBlock  Text="{Binding StockValue, ElementName=sp500Stock}"/>
+    <Button Content="Refresh StockValue" FontSize="20" Click="Button_Click"/>
+    <local:CarSalesCon x:Name="FordF150"/>
+    <TextBlock Text="{Binding BrandName, ElementName=FordF150}"/>
+    <Button Content="SetCar" FontSize="20" Click="CarClick"/>
+</StackPanel>
+</Window>
