@@ -1,0 +1,29 @@
+fieldset{
+    border-color:#a593c2;
+    border-width: 3px;
+    border-style:solid;
+}
+
+fieldset>legend{
+    color:crimson
+}
+
+label{
+    display:block;
+    color:teal
+}
+
+input{
+    border-radius: 2px;
+    padding-bottom: 2px;
+    padding-top:2px;
+    
+}
+
+input:valid{
+    border-color:green
+}
+
+input:invalid{
+    border-color:red
+}
