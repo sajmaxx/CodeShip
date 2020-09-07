@@ -1,0 +1,16 @@
+﻿<Window x:Class="MVVMSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Window.Resources>
+        <ResourceDictionary Source="XAMLResources/StudentsViewResources.xaml" />
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <ContentControl ContentTemplate="{StaticResource StudentListView}"
+                            Content="{Binding}" />
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,6 @@
+To build and run the demos from this module, you need to run the SQL script ZzaDatabaseGen.sql 
+to create the Zza database in your default SQL Server instance. If you have a named SQL 
+instance (i.e. SQLEXPRESS created by a Visual Studio installation) instead of a default instance,
+you will need to modify the connection strings in the config file to reflect that.
+
+Then you can simply build and run.

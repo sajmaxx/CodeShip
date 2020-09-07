@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:se="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:this="clr-namespace:MVVMSample">
+    <DataTemplate x:Key="StudentView"
+                  DataType="this:StudentViewModel">
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="DeleteStudentButton"
+                    Content="X"
+                    Foreground="Red"
+                    Width="25"
+                    Height="25"
+                    Margin="0,0,20,0">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger SourceObject="{Binding ElementName=DeleteStudentButton}"
+                                    EventName="Click">
+                        <se:CallMethodAction MethodName="DeleteStudentAction"
+                                             TargetObject="{Binding DataContext, ElementName=DeleteStudentButton}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <TextBox Text="{Binding FirstName}"
+                       Margin="0,0,20,0" />
+            <TextBox Text="{Binding LastName}"
+                     Margin="0,0,20,0" />
+            <TextBox Text="{Binding GradePointAverage}" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="StudentListView"
+                  DataType="this:StudentListViewModel">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button x:Name="GetStudentsButton"
+                        Content="Get Students"
+                        Width="100"
+                        Height="25"
+                        Margin="0,0,20,0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger SourceObject="{Binding ElementName=GetStudentsButton}"
+                                        EventName="Click">
+                            <se:CallMethodAction MethodName="GetStudentsAction"
+                                                 TargetObject="{Binding DataContext, ElementName=GetStudentsButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="SaveStudentsButton"
+                        Content="Save Students"
+                        Width="100"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        IsEnabled="{Binding IsSaveStudentsActionEnabled}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger SourceObject="{Binding ElementName=SaveStudentsButton}"
+                                        EventName="Click">
+                            <se:CallMethodAction MethodName="SaveStudentsAction"
+                                                 TargetObject="{Binding DataContext, ElementName=SaveStudentsButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="AddStudentButton"
+                        Content="Add New Student"
+                        Width="130"
+                        Height="25"
+                        Margin="0,0,20,0"
+                        IsEnabled="{Binding IsAddStudentsActionEnabled}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger SourceObject="{Binding ElementName=AddStudentButton}"
+                                        EventName="Click">
+                            <se:CallMethodAction MethodName="AddStudentAction"
+                                                 TargetObject="{Binding DataContext, ElementName=AddStudentButton}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+            </StackPanel>
+
+            <ListView x:Name="TheStudentsDisplay"
+                      ItemsSource="{Binding TheStudents}"
+                      ItemTemplate="{StaticResource StudentView}"
+                      Grid.Row="1" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

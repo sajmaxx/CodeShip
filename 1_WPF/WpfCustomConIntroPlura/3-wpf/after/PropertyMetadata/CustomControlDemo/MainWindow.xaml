@@ -1,0 +1,9 @@
+﻿<Window x:Class="CustomControlDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:CustomControlLib;assembly=CustomControlLib"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <cc:MyCustomControl Text="{Binding Name}" />
+    </Grid>
+</Window>

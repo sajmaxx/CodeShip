@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CustomControlLib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CustomControlLib;component/Themes/Aero/CommonBrushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

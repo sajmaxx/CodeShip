@@ -1,0 +1,1 @@
+select FirstName, LastName, State, Zip from dbo.Customer where State = 'OH' AND ZIP > 47000 AND ZIP < 92000

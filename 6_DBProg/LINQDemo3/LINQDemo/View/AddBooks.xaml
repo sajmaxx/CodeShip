@@ -1,0 +1,33 @@
+﻿<!-- ******************************************************************
+     A LINQ Tutorial: WPF Data Binding with LINQ to SQL
+     By: Abby Fichtner, http://www.TheHackerChickBlog.com
+     Article URL: http://www.codeproject.com/KB/linq/linqtutorial3.aspx
+     Licensed under The Code Project Open License (CPOL) 
+     ****************************************************************** -->
+    
+<UserControl x:Class="LINQDemo.View.AddBooks"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="availableBooks" />
+
+        <BitmapImage x:Key="AddIcon" UriSource="../Images/add.ico" />
+        <ControlTemplate x:Key="AddButton" TargetType="{x:Type Button}">
+            <Button Margin="5 0 0 0" Click="AddBook" CommandParameter="{Binding}">
+                <WrapPanel>
+                    <Image Source="{StaticResource AddIcon}" Height="16" Margin="5 0"/>
+                    <TextBlock Foreground="ForestGreen" Margin="0 0 5 0">Add Book</TextBlock>
+                </WrapPanel>
+            </Button>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <DockPanel DataContext="{Binding ElementName=AddBooksList, Path=SelectedItem}" LastChildFill="True">
+        <Button Template="{StaticResource AddButton}" ToolTip="Add selected book" DockPanel.Dock="Right" />
+        <ComboBox Name="AddBooksList" ItemsSource="{Binding Source={StaticResource availableBooks}, UpdateSourceTrigger=Explicit}"  
+                                      SelectedIndex="-1" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Stretch" 
+                                      DisplayMemberPath="Title" Height="22" DockPanel.Dock="Left" />
+    </DockPanel>
+
+</UserControl>

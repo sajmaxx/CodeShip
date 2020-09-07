@@ -1,0 +1,15 @@
+﻿<Window x:Class="CustomControlDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:CustomControlLib;assembly=CustomControlLib"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <cc:MyCustomControl>
+            <StackPanel x:Name="_stackPanel">
+                <Button cc:MyCustomControl.IncludeChildCount="True">One</Button>
+                <Button cc:MyCustomControl.IncludeChildCount="True">Two</Button>
+                <Button cc:MyCustomControl.IncludeChildCount="True">Three</Button>
+            </StackPanel>
+        </cc:MyCustomControl>
+    </Grid>
+</Window>

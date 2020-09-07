@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ZzaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ZzaModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="ZzaModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="ZzaModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderItem" EntityType="ZzaModel.Store.OrderItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderItemOption" EntityType="ZzaModel.Store.OrderItemOption" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderStatus" EntityType="ZzaModel.Store.OrderStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="ZzaModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductOption" EntityType="ZzaModel.Store.ProductOption" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductSize" EntityType="ZzaModel.Store.ProductSize" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Order_Customer" Association="ZzaModel.Store.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderStatus" Association="ZzaModel.Store.FK_Order_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Order" Association="ZzaModel.Store.FK_OrderItem_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Product" Association="ZzaModel.Store.FK_OrderItem_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_ProductSize" Association="ZzaModel.Store.FK_OrderItem_ProductSize">
+            <End Role="ProductSize" EntitySet="ProductSize" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemOption_OrderItem" Association="ZzaModel.Store.FK_OrderItemOption_OrderItem">
+            <End Role="OrderItem" EntitySet="OrderItem" />
+            <End Role="OrderItemOption" EntitySet="OrderItemOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemOption_ProductOption" Association="ZzaModel.Store.FK_OrderItemOption_ProductOption">
+            <End Role="ProductOption" EntitySet="ProductOption" />
+            <End Role="OrderItemOption" EntitySet="OrderItemOption" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StoreId" Type="uniqueidentifier" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Street" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="uniqueidentifier" />
+          <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrderStatusId" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime2" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryDate" Type="datetime2" Nullable="false" />
+          <Property Name="DeliveryCharge" Type="smallmoney" Nullable="false" />
+          <Property Name="DeliveryStreet" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryCity" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryState" Type="nvarchar" MaxLength="2" />
+          <Property Name="DeliveryZip" Type="nvarchar" MaxLength="10" />
+          <Property Name="ItemsTotal" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="uniqueidentifier" />
+          <Property Name="OrderId" Type="bigint" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductSizeId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="smallmoney" Nullable="false" />
+          <Property Name="TotalPrice" Type="smallmoney" Nullable="false" />
+          <Property Name="Instructions" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OrderItemOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="uniqueidentifier" />
+          <Property Name="OrderItemId" Type="bigint" Nullable="false" />
+          <Property Name="ProductOptionId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Price" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="HasOptions" Type="bit" Nullable="false" />
+          <Property Name="IsVegetarian" Type="bit" />
+          <Property Name="WithTomatoSauce" Type="bit" />
+          <Property Name="SizeIds" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Factor" Type="int" Nullable="false" />
+          <Property Name="IsPizzaOption" Type="bit" Nullable="false" />
+          <Property Name="IsSaladOption" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Price" Type="smallmoney" Nullable="false" />
+          <Property Name="PremiumPrice" Type="smallmoney" />
+          <Property Name="ToppingPrice" Type="smallmoney" />
+          <Property Name="IsGlutenFree" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="ZzaModel.Store.Customer" Multiplicity="1" />
+          <End Role="Order" Type="ZzaModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderStatus">
+          <End Role="OrderStatus" Type="ZzaModel.Store.OrderStatus" Multiplicity="1" />
+          <End Role="Order" Type="ZzaModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Order">
+          <End Role="Order" Type="ZzaModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Product">
+          <End Role="Product" Type="ZzaModel.Store.Product" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_ProductSize">
+          <End Role="ProductSize" Type="ZzaModel.Store.ProductSize" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductSize">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductSizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemOption_OrderItem">
+          <End Role="OrderItem" Type="ZzaModel.Store.OrderItem" Multiplicity="1" />
+          <End Role="OrderItemOption" Type="ZzaModel.Store.OrderItemOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItemOption">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemOption_ProductOption">
+          <End Role="ProductOption" Type="ZzaModel.Store.ProductOption" Multiplicity="1" />
+          <End Role="OrderItemOption" Type="ZzaModel.Store.OrderItemOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOption">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItemOption">
+              <PropertyRef Name="ProductOptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZzaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ZzaEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="ZzaModel.Customer" />
+          <EntitySet Name="Orders" EntityType="ZzaModel.Order" />
+          <EntitySet Name="OrderItems" EntityType="ZzaModel.OrderItem" />
+          <EntitySet Name="OrderItemOptions" EntityType="ZzaModel.OrderItemOption" />
+          <EntitySet Name="OrderStatus" EntityType="ZzaModel.OrderStatu" />
+          <EntitySet Name="Products" EntityType="ZzaModel.Product" />
+          <EntitySet Name="ProductOptions" EntityType="ZzaModel.ProductOption" />
+          <EntitySet Name="ProductSizes" EntityType="ZzaModel.ProductSize" />
+          <AssociationSet Name="FK_Order_Customer" Association="ZzaModel.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrderStatus" Association="ZzaModel.FK_Order_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Order" Association="ZzaModel.FK_OrderItem_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Product" Association="ZzaModel.FK_OrderItem_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_ProductSize" Association="ZzaModel.FK_OrderItem_ProductSize">
+            <End Role="ProductSize" EntitySet="ProductSizes" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemOption_OrderItem" Association="ZzaModel.FK_OrderItemOption_OrderItem">
+            <End Role="OrderItem" EntitySet="OrderItems" />
+            <End Role="OrderItemOption" EntitySet="OrderItemOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemOption_ProductOption" Association="ZzaModel.FK_OrderItemOption_ProductOption">
+            <End Role="ProductOption" EntitySet="ProductOptions" />
+            <End Role="OrderItemOption" EntitySet="OrderItemOptions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="StoreId" Type="Guid" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Street" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="ZzaModel.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Guid" />
+          <Property Name="CustomerId" Type="Guid" Nullable="false" />
+          <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Phone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeliveryCharge" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="DeliveryStreet" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DeliveryCity" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DeliveryState" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="DeliveryZip" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ItemsTotal" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <NavigationProperty Name="Customer" Relationship="ZzaModel.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="OrderStatu" Relationship="ZzaModel.FK_Order_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
+          <NavigationProperty Name="OrderItems" Relationship="ZzaModel.FK_OrderItem_Order" FromRole="Order" ToRole="OrderItem" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Guid" />
+          <Property Name="OrderId" Type="Int64" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductSizeId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="TotalPrice" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="Instructions" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Order" Relationship="ZzaModel.FK_OrderItem_Order" FromRole="OrderItem" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="ZzaModel.FK_OrderItem_Product" FromRole="OrderItem" ToRole="Product" />
+          <NavigationProperty Name="ProductSize" Relationship="ZzaModel.FK_OrderItem_ProductSize" FromRole="OrderItem" ToRole="ProductSize" />
+          <NavigationProperty Name="OrderItemOptions" Relationship="ZzaModel.FK_OrderItemOption_OrderItem" FromRole="OrderItem" ToRole="OrderItemOption" />
+        </EntityType>
+        <EntityType Name="OrderItemOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Guid" />
+          <Property Name="OrderItemId" Type="Int64" Nullable="false" />
+          <Property Name="ProductOptionId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <NavigationProperty Name="OrderItem" Relationship="ZzaModel.FK_OrderItemOption_OrderItem" FromRole="OrderItemOption" ToRole="OrderItem" />
+          <NavigationProperty Name="ProductOption" Relationship="ZzaModel.FK_OrderItemOption_ProductOption" FromRole="OrderItemOption" ToRole="ProductOption" />
+        </EntityType>
+        <EntityType Name="OrderStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="ZzaModel.FK_Order_OrderStatus" FromRole="OrderStatus" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Image" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HasOptions" Type="Boolean" Nullable="false" />
+          <Property Name="IsVegetarian" Type="Boolean" />
+          <Property Name="WithTomatoSauce" Type="Boolean" />
+          <Property Name="SizeIds" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="OrderItems" Relationship="ZzaModel.FK_OrderItem_Product" FromRole="Product" ToRole="OrderItem" />
+        </EntityType>
+        <EntityType Name="ProductOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Factor" Type="Int32" Nullable="false" />
+          <Property Name="IsPizzaOption" Type="Boolean" Nullable="false" />
+          <Property Name="IsSaladOption" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderItemOptions" Relationship="ZzaModel.FK_OrderItemOption_ProductOption" FromRole="ProductOption" ToRole="OrderItemOption" />
+        </EntityType>
+        <EntityType Name="ProductSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="4" />
+          <Property Name="PremiumPrice" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="ToppingPrice" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="IsGlutenFree" Type="Boolean" />
+          <NavigationProperty Name="OrderItems" Relationship="ZzaModel.FK_OrderItem_ProductSize" FromRole="ProductSize" ToRole="OrderItem" />
+        </EntityType>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="ZzaModel.Customer" Multiplicity="1" />
+          <End Role="Order" Type="ZzaModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_OrderStatus">
+          <End Role="OrderStatus" Type="ZzaModel.OrderStatu" Multiplicity="1" />
+          <End Role="Order" Type="ZzaModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OrderStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Order">
+          <End Role="Order" Type="ZzaModel.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Product">
+          <End Role="Product" Type="ZzaModel.Product" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_ProductSize">
+          <End Role="ProductSize" Type="ZzaModel.ProductSize" Multiplicity="1" />
+          <End Role="OrderItem" Type="ZzaModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductSize">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="ProductSizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemOption_OrderItem">
+          <End Role="OrderItem" Type="ZzaModel.OrderItem" Multiplicity="1" />
+          <End Role="OrderItemOption" Type="ZzaModel.OrderItemOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItemOption">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemOption_ProductOption">
+          <End Role="ProductOption" Type="ZzaModel.ProductOption" Multiplicity="1" />
+          <End Role="OrderItemOption" Type="ZzaModel.OrderItemOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductOption">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItemOption">
+              <PropertyRef Name="ProductOptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZzaModelStoreContainer" CdmEntityContainer="ZzaEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ZzaModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ZzaModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="DeliveryCharge" ColumnName="DeliveryCharge" />
+                <ScalarProperty Name="DeliveryStreet" ColumnName="DeliveryStreet" />
+                <ScalarProperty Name="DeliveryCity" ColumnName="DeliveryCity" />
+                <ScalarProperty Name="DeliveryState" ColumnName="DeliveryState" />
+                <ScalarProperty Name="DeliveryZip" ColumnName="DeliveryZip" />
+                <ScalarProperty Name="ItemsTotal" ColumnName="ItemsTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="ZzaModel.OrderItem">
+              <MappingFragment StoreEntitySet="OrderItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductSizeId" ColumnName="ProductSizeId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItemOptions">
+            <EntityTypeMapping TypeName="ZzaModel.OrderItemOption">
+              <MappingFragment StoreEntitySet="OrderItemOption">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="ProductOptionId" ColumnName="ProductOptionId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="ZzaModel.OrderStatu">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ZzaModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="HasOptions" ColumnName="HasOptions" />
+                <ScalarProperty Name="IsVegetarian" ColumnName="IsVegetarian" />
+                <ScalarProperty Name="WithTomatoSauce" ColumnName="WithTomatoSauce" />
+                <ScalarProperty Name="SizeIds" ColumnName="SizeIds" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductOptions">
+            <EntityTypeMapping TypeName="ZzaModel.ProductOption">
+              <MappingFragment StoreEntitySet="ProductOption">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
+                <ScalarProperty Name="IsPizzaOption" ColumnName="IsPizzaOption" />
+                <ScalarProperty Name="IsSaladOption" ColumnName="IsSaladOption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSizes">
+            <EntityTypeMapping TypeName="ZzaModel.ProductSize">
+              <MappingFragment StoreEntitySet="ProductSize">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PremiumPrice" ColumnName="PremiumPrice" />
+                <ScalarProperty Name="ToppingPrice" ColumnName="ToppingPrice" />
+                <ScalarProperty Name="IsGlutenFree" ColumnName="IsGlutenFree" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="CigarShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CigarShop"
+        xmlns:models="clr-namespace:CigarShop.Models"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="274.481"
+        Width="483.195">
+    <Window.Resources>
+        <DataTemplate x:Key="CigarView"
+                      DataType="models:Cigar">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="30"></RowDefinition>
+                    <RowDefinition Height ="30"></RowDefinition>
+                    <RowDefinition Height ="30"></RowDefinition>
+                    <RowDefinition Height ="30"></RowDefinition>
+                    <RowDefinition Height ="30"></RowDefinition>
+                    <RowDefinition Height ="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="CigarViewer" Text="Cigar Selected For you" FontSize="22"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Grid.ColumnSpan="4"></TextBlock>
+
+                <TextBlock Text="Cigar Company"  Grid.Row="1" Grid.Column="1"></TextBlock>
+                <TextBox x:Name="CigarCompTxt" Grid.Row="1" Grid.Column="2" 
+                         Text="{Binding Path=Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Padding="2" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Cigar Name"  Grid.Row="2" Grid.Column="1"></TextBlock>
+                <TextBox x:Name="CigarNamTxt" Grid.Row="2" Grid.Column="2" 
+                         Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Padding="2" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Year of Mfg"  Grid.Row="3" Grid.Column="1"></TextBlock>
+                <TextBox x:Name="YearMfgTxt" Grid.Row="3" Grid.Column="2" 
+                         Text="{Binding Path=YearOfMfg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Padding="2" VerticalAlignment="Center"/>
+
+                <Button x:Name="GetNewCigar" Grid.Row="4" Grid.ColumnSpan="4" 
+                        Content="New Cigar Time"
+                        VerticalAlignment="Center" Padding="1" Width="133" Height="23"
+                        Click="GetNewCigar_Click" /> 
+
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding}" 
+                        ContentTemplate="{StaticResource CigarView}"></ContentControl>
+    </Grid>
+
+</Window>
