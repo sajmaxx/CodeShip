@@ -1,0 +1,29 @@
+ul li 
+{
+    color: 055622;
+    border : 2px mediumpurple;
+}
+
+.vola
+{
+    border: 2px solid mediumseagreen;
+}
+
+.tabla
+{
+    width: 620px;
+    height: 110px;
+    margin: 0;
+    padding: 10px;
+    border: 3px solid mediumturquoise;
+}
+
+
+.kabla
+{
+    width: 620px;
+    height: 110px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid orange;
+}
