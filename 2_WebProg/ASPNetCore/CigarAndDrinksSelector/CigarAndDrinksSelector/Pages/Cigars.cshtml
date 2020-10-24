@@ -1,0 +1,35 @@
+﻿@page
+@model CigarAndDrinksSelector.Pages.CigarsModel
+@{
+    ViewData["Title"] = "Cigar Selection 2020";
+}
+
+<form method="get">
+    <label>Find Your Cigar</label>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" value="" name="searchCigars"/>
+            <span class="input-group-btn">
+                <button class="btn btn-danger">
+                    Search for Cigars
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+<div class="text-center">
+    <h1 class="display-4">Staff Pick Cigars of 2020</h1>
+    <table class="table">
+        @foreach (var cig in Model.CigarsList)
+        {
+            <tr>
+                <td>@cig.Company</td> 
+                <td>@cig.Brand</td> 
+                <td>@cig.CountryOfOrigin</td>
+                <td>@cig.YearManufactured</td>
+            </tr>
+        }
+    </table>
+    <p>Learn about <a href="https://www.cigarsinternational.com">Shop for these here</a>.</p>
+</div>

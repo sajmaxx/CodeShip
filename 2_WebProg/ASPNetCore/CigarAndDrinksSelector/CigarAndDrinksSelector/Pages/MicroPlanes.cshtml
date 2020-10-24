@@ -1,0 +1,19 @@
+﻿@page
+@model CigarAndDrinksSelector.Pages.MicroPlanesModel
+@{
+    ViewData["Title"] = "Top 5 2020 MicroPlanes";
+}
+
+<div class="text-center">
+    <h1 class-="display-4">Microplanes n the Sky</h1>
+    <table class="table">
+        @foreach(var micro in Model.MicroPlanes)
+        {
+            <tr>
+                <td>@micro.Company</td>
+                <td>@micro.ModelName</td>
+                <td>@micro.ModelNo</td>
+            </tr>
+        }
+    </table>
+</div>
