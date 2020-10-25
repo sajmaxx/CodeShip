@@ -16,6 +16,24 @@
 
         }
     </style>
+    <script>
+        function savetheCigar()
+        {
+            localStorage.setItem("aging 101", true);
+        }
+        window.onload = function()
+        {
+            var favorite = document.getElementById('fantastico');
+            if(window.localStorage)
+            {
+                var storage = window.localStorage;
+                if(storage.getItem('aging 101') == 'true')
+                {
+                    favorite.innerHTML = "Aging 101 is my favorite Cigar for 2020";
+                }
+            }
+        }
+    </script>
 </header>
 <body>
     <header id="something">
@@ -46,6 +64,11 @@
                     <td> <img src="LaBombaWarHead.png" width=340 height=240> </td>
                 </tr>
             </table>
+
+            <p>
+                <button  onclick="savetheCigar()" type="button"> Save as Favorite</button>
+                <span id="fantastico"></span>
+            </p>
 
         </body>
     </main>    
