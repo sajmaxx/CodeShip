@@ -5,28 +5,6 @@ using System.Text;
 
 namespace HandleErrors
 {
-    public class Car
-    {
-        public string Brand { get; init; }
-        public string Model { get; init; }
-        public int  YearofMfg { get; init; }
-
-
-        public Car()
-        {
-
-        }
-        public Car(string brand, string model, int yearofMfg)
-        {
-            this.Brand = brand;
-            this.Model = model;
-            this.YearofMfg = yearofMfg;
-        }
-
-
-
-    }
-
     public class Employee
     {
         public string FirstName { get; set; }
@@ -43,6 +21,27 @@ namespace HandleErrors
                  LastName = "baba";
             }
         }
+
+        public void DoAllCalculations(string memNO)
+        {
+            var number = int.Parse(memNO);
+
+            long toto = 100;
+            GetMyCaclToto(number, toto);
+        }
+
+        private static void GetMyCaclToto(int number, long toto)
+        {
+            for (long i = 2; i < number; i++)
+            {
+                if (toto > 400)
+                {
+                    toto += i * 100;
+                    break;
+                }
+            }
+        }
+
 
         private double GetCostofCar(Car thecar)
         {
