@@ -1,0 +1,13 @@
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\MovieRank-Pre.exe
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\MovieRank-Pre.csprojAssemblyReference.cache
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\MovieRank-Pre.AssemblyInfoInputs.cache
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\MovieRank-Pre.AssemblyInfo.cs
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\MovieRank-Pre.RazorTargetAssemblyInfo.cache
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\staticwebassets\MovieRank-Pre.StaticWebAssets.Manifest.cache
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\staticwebassets\MovieRank-Pre.StaticWebAssets.xml
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\bin\Debug\netcoreapp3.1\AWSSDK.DynamoDBv2.dll
+C:\Pluralsight\Solutions\Module-4\MovieRank-Pre\MovieRank-Pre\obj\Debug\netcoreapp3.1\MovieRank-Pre.csproj.CopyComplete

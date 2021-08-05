@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "j0befKDtDA/uGSBpsYCVZAU18R+FwJOeDF1m6n/YRp9n/L4tMRr4BmxUoYbyouFKKQ2r3oOF8t4X+FF2oD5x9w==",
+  "success": true,
+  "projectFilePath": "C:\\Pluralsight\\NewSolutionFiles\\08\\After\\MovieRank-Pre\\MovieRank.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\awssdk.core\\3.5.1.23\\awssdk.core.3.5.1.23.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.1.1\\awssdk.dynamodbv2.3.5.1.1.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.101\\awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

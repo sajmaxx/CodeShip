@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To The Jungle</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="card-columns">
+    @foreach (var taco in Model.Tacos)
+    {
+        <div class ="card">
+            <div>
+                @taco.Id
+                @taco.Flavor
+                @taco.Protein
+                @taco.Shell
+            </div>
+        </div>
+    }
+</div>

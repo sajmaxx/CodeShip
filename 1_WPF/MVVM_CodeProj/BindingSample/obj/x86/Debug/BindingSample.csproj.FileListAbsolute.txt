@@ -1,0 +1,13 @@
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\bin\Debug\BindingSample.exe
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\bin\Debug\BindingSample.pdb
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\MainWindow.baml
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\MainWindow.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\App.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample_MarkupCompile.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.g.resources
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.Properties.Resources.resources
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.csproj.GenerateResource.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.exe
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.pdb
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\BindingSample\obj\x86\Debug\BindingSample.csprojAssemblyReference.cache

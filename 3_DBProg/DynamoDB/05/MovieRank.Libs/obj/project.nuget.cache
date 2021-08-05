@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Sf5wwFil5m0zoZlO88fhQGuSMmZBz6EWNUxWRx5tqFZlSsA1dlpywnlIRZuBC3fXCpxI1qvOPT2PUr9BIBeGag==",
+  "success": true,
+  "projectFilePath": "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank\\MovieRank.Libs\\MovieRank.Libs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\awssdk.core\\3.5.1.10\\awssdk.core.3.5.1.10.nupkg.sha512",
+    "C:\\Users\\daniel.donbavand\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.0.12\\awssdk.dynamodbv2.3.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

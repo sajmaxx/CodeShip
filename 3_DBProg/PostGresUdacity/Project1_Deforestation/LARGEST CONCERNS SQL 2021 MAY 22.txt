@@ -1,0 +1,32 @@
+CREATE VIEW  Country1990 AS
+select forest_area.country_name, forest_area.forest_area_sqkm AS forestArea
+from forest_area
+  WHERE  forest_area.year = 1990 AND NOT(forest_area.country_name = 'World')
+  ORDER BY  forest_area.country_name,forest_area.year;
+
+CREATE VIEW Country2016 AS
+select forest_area.country_name, forest_area.forest_area_sqkm AS forestArea,
+ regions.name
+from forest_area
+INNER JOIN regions
+ON forest_area.country_code = regions.country_code;
+  WHERE  forest_area.year = 2016 AND NOT(forest_area.country_name = 'World')
+  ORDER BY  forest_area.country_name,forest_area.year;
+
+
+
+SELECT   Country2016.country_name, Country2016.region, (Country1990.forestArea  - Country2016.forestArea) AS DecreaseFrom2016tO1990
+FROM Country2016 JOIN
+Country1990 ON 
+Country2016.country_name = Country1990.country_name
+WHERE (Country1990.forestArea  - Country2016.forestArea) > 0
+ORDER BY DecreaseFrom2016tO1990 DESC LIMIT 5 ;
+
+
+
+Brazil	5467050
+Brazil	4925540	Latin America & Caribbean
+
+
+Tanzania	456880	Sub-Saharan Africa
+Tanzania	559200

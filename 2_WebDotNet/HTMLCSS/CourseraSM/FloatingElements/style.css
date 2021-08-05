@@ -1,0 +1,57 @@
+div{
+    background-color :#00afff;
+}
+
+*{
+    box-sizing: border-box;
+}
+p{
+    width: 45%;
+    position: relative;
+    top : 11px;
+    left: 11px;
+    border: 1px solid darkslateblue;
+    padding: 5px;
+    float: left;
+}
+
+/* Animation example */
+@keyframes example {
+    from {background-color: antiquewhite;}
+    to {background-color: #FF7F50;}
+  }
+  
+  /* The element to apply the animation to */
+  section {
+    
+    background-color: red;
+    animation-name: example;
+    animation-duration: 14s;
+  }
+
+section{
+    clear: both;
+}
+
+#para1
+{
+    background-color: #A52A2A;
+    height:'auto';
+ 
+}
+#para2
+{
+    background-color: #DEB887;
+    height:'auto';
+}
+#para3
+{
+    background-color: #5F9EA0;
+    height:'auto';
+}
+
+#para4
+{
+    background-color: #FF7F50;
+    height:'auto';
+}

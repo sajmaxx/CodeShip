@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CigarAccessService/1.0.0": {
+        "dependencies": {
+          "CigarsDrinks.Core.Lib": "1.0.0"
+        },
+        "runtime": {
+          "CigarAccessService.dll": {}
+        }
+      },
+      "CigarsDrinks.Core.Lib/1.0.0": {
+        "runtime": {
+          "CigarsDrinks.Core.Lib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CigarAccessService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CigarsDrinks.Core.Lib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

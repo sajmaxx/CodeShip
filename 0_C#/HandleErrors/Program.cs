@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
 
 
 /// <summary>
@@ -38,10 +41,39 @@ using System.ComponentModel.Design;
 
 namespace HandleErrors
 {
-    class Program
+    static class Program
     {
+
+        private static IEnumerable<int> Find(this IEnumerable<int> values, Func<int, bool> testfunc)
+        {
+            foreach (var numbah in values)
+            {
+                if (testfunc(numbah))
+                {
+                    yield return numbah;
+                }
+            }
+
+        }
+
+
+        private static bool NumberIsHigherThan50(int numba)
+        {
+            return numba > 50;
+        }
+
         static void Main(string[] args)
         {
+            int [] numbas = new[] { 10, 20, 55, 66, 77, 55};
+
+            List<int> hinumbas = numbas.Find(NumberIsHigherThan50).ToList() ;
+
+            foreach (var numby in hinumbas)
+            {
+                Console.WriteLine("getting high number " + numby);
+            }
+
+
             Console.WriteLine("Hello World!");
             var baba = Calculate(4,6, '*');
             var gogo = Calculate(4,5,'/');
@@ -59,7 +91,7 @@ namespace HandleErrors
             }
             catch (ArgumentNullException ae)
             {
-                Console.WriteLine("was aaaaaaaaaaaaaaaap ArgumentNullException");
+                Console.WriteLine("Custome message for ArgumentNullException");
 
             }
             catch (Exception e)

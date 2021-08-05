@@ -1,0 +1,9 @@
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\bin\Debug\netstandard2.0\CarLibrary.deps.json
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\bin\Debug\netstandard2.0\CarLibrary.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\bin\Debug\netstandard2.0\CarLibrary.pdb
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.csprojAssemblyReference.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.AssemblyInfoInputs.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.AssemblyInfo.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\CarLibrary\obj\Debug\netstandard2.0\CarLibrary.pdb

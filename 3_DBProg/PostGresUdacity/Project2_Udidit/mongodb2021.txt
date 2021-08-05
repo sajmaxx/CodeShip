@@ -1,0 +1,66 @@
+
+
+db.events.find({}).limit(2).pretty()
+{
+        "_id" : ObjectId("60ee48a00f26e0c562b43149"),
+        "type" : "page_view",
+        "timestamp" : ISODate("2019-07-06T06:31:05.821Z"),
+        "deviceId" : "55d882e4-1458-4c7c-92cf-98975a399e60",
+        "browser" : {
+                "vendor" : "firefox",
+                "os" : "windows"
+        },
+        "url" : "/topic/globalnews"
+}
+{
+        "_id" : ObjectId("60ee48a00f26e0c562b4314a"),
+        "type" : "page_view",
+        "timestamp" : ISODate("2020-01-08T12:19:11.555Z"),
+        "deviceId" : "dd0d6bb5-12a1-45c3-b3af-9c8e923e51c6",
+        "browser" : {
+                "vendor" : "chrome",
+                "os" : "mac"
+        },
+        "url" : "/topic/electronics"
+}
+
+
+db.events.find( { browser: { vendor: "firefox"}}) 
+
+
+
+db.Courses.find({name: {first: "Rohit", 
+                        middle: "Kumar", 
+                        last: "Singh"}}).pretty()
+
+
+db.Courses.find({"courseDetails.name": "Java Backend Development"}).pretty()
+
+
+db.events.find({browser.vendor: "firefox"})
+
+
+
+db.events.find({"browser.vendor": "firefox"},
+               {"browser.timestamp" : {$gte: ISODate("2019-04-20T00:00:00.000Z")}})
+
+
+
+
+db.events.find( {"browser.timestamp" : {$gte: ISODate("2019-04-20T00:00:00.000Z")}})
+
+
+db.mycollection.find({
+    "dt" : {"$gte": ISODate("2013-10-01T00:00:00.000Z")}
+})
+
+
+Reference Number
+	
+
+55812578
+
+Email Address
+	
+
+sajan.mathews75@gmail.com

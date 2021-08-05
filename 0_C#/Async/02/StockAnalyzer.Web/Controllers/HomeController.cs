@@ -1,37 +1,33 @@
-﻿using System.Threading.Tasks;
-using System.Web;
-using System.Web.Hosting;
+﻿using Newtonsoft.Json;
+using StockAnalyzer.Core.Domain;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-using StockAnalyzer.Core;
 
 namespace StockAnalyzer.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<ActionResult> Index()
+        private static string API_URL = "https://ps-async.fekberg.com/api/stocks";
+
+        public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            return View();
+        }
 
-            // Let's make sure that we can load the files when you start the project!
-            var store = new DataStore(HostingEnvironment.MapPath("~/bin"));
-
-            await store.LoadStocks();
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        [Route("Stock/{ticker}")]
-        public async Task<ActionResult> Stock(string ticker)
+        public ActionResult Contact()
         {
-            if (string.IsNullOrWhiteSpace(ticker)) ticker = "MSFT";
+            ViewBag.Message = "Your contact page.";
 
-            ViewBag.Title = $"Stock Details for {ticker}";
-
-            var store = new DataStore(HostingEnvironment.MapPath("~/bin"));
-
-            var data = await store.LoadStocks();
-
-            return View(data[ticker]);
+            return View();
         }
     }
 }

@@ -1,0 +1,44 @@
+[
+	{
+		"id" :  "101",
+		"protein": "beef",
+		"shell": "corn",
+		"flavor": "cajun"
+	},
+	{
+		"id": "102",
+		"proteien": "beef",
+		"shell": "corn",
+		"flavor": "spicy"
+	},
+	{
+		"id": "103",
+		"protein": "beef",
+		"shell": "corn",
+		"flavor": "extra-spicy"
+	},
+	{
+		"id": "104",
+		"color": "chicken",
+		"shell": "soft",
+		"flavor": "extra-spicy"
+	},
+	{
+		"id": "107",
+		"color": "fish",
+		"shell": "tortilla",
+		"flavor": "bbq"
+	},
+	{
+		"id": "109",
+		"color": "shrimp",
+		"shell": "corn",
+		"flavor": "korean"
+	},
+	{
+		"id": "112",
+		"color": "beef",
+		"shell": "corn",
+		"flavor": "currito"
+	}
+]

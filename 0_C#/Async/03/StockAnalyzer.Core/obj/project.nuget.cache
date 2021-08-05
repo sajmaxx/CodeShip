@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tnY8PmIqlpZQBjIBmCnM1jCbTpN5Rw4cGeIpeIf7yprMbN4/nj3hDAVcIExi5nfEMsCS21d5Y5WEQyNw1l5alw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sajan\\source\\repos\\CodeShip\\0_C#\\Async\\03\\StockAnalyzer.Core\\StockAnalyzer.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sajan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\sajan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

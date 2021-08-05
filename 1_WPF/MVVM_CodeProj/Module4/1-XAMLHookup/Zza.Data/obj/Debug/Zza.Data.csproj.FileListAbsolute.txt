@@ -1,0 +1,12 @@
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\Zza.Data.dll.config
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\Zza.Data.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\Zza.Data.pdb
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\EntityFramework.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\EntityFramework.xml
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\obj\Debug\Zza.Data.csprojAssemblyReference.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\obj\Debug\Zza.Data.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\obj\Debug\Zza.Data.csproj.CopyComplete
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\obj\Debug\Zza.Data.dll
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\Module4\1-XAMLHookup\Zza.Data\obj\Debug\Zza.Data.pdb

@@ -1,0 +1,10 @@
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\bin\Debug\CurveDigitzer.exe.config
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\bin\Debug\CurveDigitzer.exe
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\bin\Debug\CurveDigitzer.pdb
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.Properties.Resources.resources
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.csproj.GenerateResource.cache
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.exe
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.pdb
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.MainDigitizerViiew.resources
+C:\Users\sajan\source\repos\Eldorado\CurveDigitzer\obj\Debug\CurveDigitzer.csproj.AssemblyReference.cache

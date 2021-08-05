@@ -1,9 +1,0 @@
-﻿<Window x:Class="CustomControlDemo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:cc="clr-namespace:CustomControlLib;assembly=CustomControlLib"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <cc:MyCustomControl Margin="48,50,52,50"  x:Name="SambaControl" SaMouseClick="MyCustomControl_SaMouseClick_1" />
-    </Grid>
-</Window>

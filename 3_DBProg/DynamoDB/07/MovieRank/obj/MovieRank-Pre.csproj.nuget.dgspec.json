@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank-Pre\\MovieRank-Pre\\MovieRank-Pre.csproj": {}
+  },
+  "projects": {
+    "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank-Pre\\MovieRank-Pre\\MovieRank-Pre.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank-Pre\\MovieRank-Pre\\MovieRank-Pre.csproj",
+        "projectName": "MovieRank-Pre",
+        "projectPath": "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank-Pre\\MovieRank-Pre\\MovieRank-Pre.csproj",
+        "packagesPath": "C:\\Users\\daniel.donbavand\\.nuget\\packages\\",
+        "outputPath": "C:\\Pluralsight\\Solutions\\Module-4\\MovieRank-Pre\\MovieRank-Pre\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\daniel.donbavand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://artifactory.xero-support.com/api/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.5.0.12, )"
+            },
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[3.3.101, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <title>Cincinnati Car Show 2020</title>
         <h1>Welcome to the 2020 Virtual Car Show</h1>
+		<link rel="stylesheet" href="css/Bootstrap.min.css">
+        <link rel="stylessheet" href="css/styles.css">
         <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body >
         <h2>Car show Gallery for North Cincinnati Area </h2>
@@ -26,5 +29,25 @@
         <img src="1965ShelbyCobra.jpg" width="500" height="300"/> <br>
         <br>
         <a href="Details.html"> Read More</a>  
-    </body>
+		<div id="markit">
+          <input type="text" v-model="booshaka">
+          <p> Once there was a way do this {{ booshaka }} </p>
+        </div>
+		
+		
+         <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/mainscript.js"></script>
+		<script>
+		  new Vue({
+		   el:"#markit",
+		   data()
+		   {
+		     return {
+			  booshaka: ''
+			 };
+		   }
+          });
+		</script>
+   </body>
 </html>

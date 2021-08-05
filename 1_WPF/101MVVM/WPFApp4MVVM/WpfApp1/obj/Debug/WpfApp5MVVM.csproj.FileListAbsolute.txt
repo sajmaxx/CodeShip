@@ -1,0 +1,7 @@
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\WpfApp5MVVM.csprojAssemblyReference.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\BootStrap\MainWindowView.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\App.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\WpfApp5_MarkupCompile.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\101MVVM\WPFApp4MVVM\WpfApp1\obj\Debug\WpfApp5_MarkupCompile.lref

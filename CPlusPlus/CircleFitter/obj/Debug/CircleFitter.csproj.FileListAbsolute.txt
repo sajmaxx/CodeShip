@@ -1,0 +1,9 @@
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CurveDigitzer.CirclFitterWindow.resources
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CircleFitter.csproj.GenerateResource.cache
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CircleFitter.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\bin\Debug\CircleFitter.exe.config
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\bin\Debug\CircleFitter.exe
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\bin\Debug\CircleFitter.pdb
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CircleFitter.Properties.Resources.resources
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CircleFitter.exe
+C:\Users\sajan\source\repos\Eldorado\CircleFitter\obj\Debug\CircleFitter.pdb

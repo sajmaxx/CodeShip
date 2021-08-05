@@ -1,0 +1,13 @@
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\bin\Debug\SimpleDataTemplateTest.exe
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\bin\Debug\SimpleDataTemplateTest.pdb
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\MainWindow.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\App.g.cs
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest_MarkupCompile.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest_MarkupCompile.lref
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\MainWindow.baml
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.g.resources
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.Properties.Resources.resources
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.csproj.GenerateResource.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.exe
+C:\Users\sajan\source\repos\CodeShip\1_WPF\MVVM_CodeProj\SimpleDataTemplateTest\obj\x86\Debug\SimpleDataTemplateTest.pdb

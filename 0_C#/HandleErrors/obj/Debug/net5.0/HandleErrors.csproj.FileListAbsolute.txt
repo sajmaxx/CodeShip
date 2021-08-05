@@ -1,0 +1,16 @@
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.exe
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.deps.json
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.runtimeconfig.json
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.runtimeconfig.dev.json
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\ref\HandleErrors.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\bin\Debug\net5.0\HandleErrors.pdb
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.AssemblyInfoInputs.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.AssemblyInfo.cs
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\ref\HandleErrors.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.pdb
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.genruntimeconfig.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\HandleErrors\obj\Debug\net5.0\HandleErrors.csprojAssemblyReference.cache

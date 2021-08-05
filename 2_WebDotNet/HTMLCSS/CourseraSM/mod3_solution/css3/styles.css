@@ -1,0 +1,59 @@
+
+body{
+     font-size: 16px;
+     color: #fff;
+     background-color: blanchedalmond;
+     font-family: 'Oxygen', sans-serif;
+}
+
+#header-nav
+{
+    background-color: purple;
+    border-radius: 0;
+    border: 0;
+}
+
+#container-body 
+{
+    background-color: coral;
+    height: 1000px;
+}
+
+
+#logoImage
+{
+    background: url('../images/food-logo-templates-cover.png') no-repeat;
+    width: 250px;
+    height:150px;
+    margin: 5px;        
+
+}
+
+.navbar-brand
+{
+    padding-top: 25px;
+}
+
+.navbar-brand h1
+{
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color:seagreen;
+   text-transform: uppercase;
+   margin-top: 0;
+   margin-bottom: 0;
+   
+}
+
+.navbar-brand a{
+    text-decoration: none;
+}
+.navbar-brand p{
+     color: #000;
+     text-transform:  uppercase;
+     font-size: .7em;
+     margin-top: 15px;
+}
+
+.navbar-brand p span{
+     vertical-align: middle;
+}

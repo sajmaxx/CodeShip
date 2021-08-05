@@ -1,9 +1,0 @@
-﻿<Window x:Class="CustomControlDemo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ccl="clr-namespace:CustomControlLib;assembly=CustomControlLib"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <ccl:SMExistCont Content="My  First Custom Con" Width="144" Height ="43" Margin="4"></ccl:SMExistCont>
-    </Grid>
-</Window>
