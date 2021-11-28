@@ -1,6 +1,10 @@
 #include <GL/glut.h>
 #include<iostream>
+#include "CarClass.h"
+#include "../MathLibSM/MathLibSM.h"  // << = static library
+
 using namespace std;
+
 int rx = 100, ry = 125;
 int xCenter = 250, yCenter = 250;
  
@@ -85,14 +89,54 @@ void display()
     ellipseMidPoint();
     glFlush();
 }
+
+
+#if GEOMATH21
+	void FunkyDebug()
+	{
+		cout << "Let's Do the Funky Math" << endl;
+	}
+#endif
+
+#if GEOMATH22
+	void MathForFun()
+	{
+	
+	}
+#endif
+
+//defining a macro!
+#define MULLIFY(a,b) a*b+1
+
 int main(int argc, char** argv)
 {
-        glutInit(&argc, argv);
+
+    ///using static library!
+    auto myvalue = AddSMMod(44, 56);
+
+
+	FunkyDebug();
+
+
+
+    auto mahvalu = MULLIFY(4,15);
+
+    cout << " using a macro TEST VALUE IS " << mahvalu << endl; 
+    
+    cout << "Entering the Gl initialization" << endl;
+	glutInit(&argc, argv);
     glutInitWindowSize(640, 480);
     glutInitWindowPosition(10, 10);
     glutCreateWindow("User_Name");
     myinit();
     glutDisplayFunc(display);
     glutMainLoop();
+
+
+    //using pointers for objects experiment
+    CarClass *ferrari = new CarClass();
+    ferrari->setNumber(777);
+    delete ferrari;
+
     return 0;
 }

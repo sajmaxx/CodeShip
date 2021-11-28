@@ -1,0 +1,15 @@
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\FloridaDemo2021.exe
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\FloridaDemo2021.deps.json
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\FloridaDemo2021.runtimeconfig.json
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\FloridaDemo2021.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\ref\FloridaDemo2021.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\bin\Debug\net6.0\FloridaDemo2021.pdb
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.csproj.AssemblyReference.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.AssemblyInfoInputs.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.AssemblyInfo.cs
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.csproj.CoreCompileInputs.cache
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\ref\FloridaDemo2021.dll
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.pdb
+C:\Users\sajan\source\repos\CodeShip\0_C#\FloridaDemo2021\FloridaDemo2021\obj\Debug\net6.0\FloridaDemo2021.genruntimeconfig.cache

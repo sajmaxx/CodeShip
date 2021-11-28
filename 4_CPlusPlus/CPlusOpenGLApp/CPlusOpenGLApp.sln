@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPlusOpenGLApp", "CPlusOpenGLApp.vcxproj", "{931C643E-2E91-42BD-A6F4-995D599E19A0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathLibSM", "..\MathLibSM\MathLibSM.vcxproj", "{342F4472-29D2-4505-81F3-A3E0FEA7F023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{931C643E-2E91-42BD-A6F4-995D599E19A0}.Release|x64.Build.0 = Release|x64
 		{931C643E-2E91-42BD-A6F4-995D599E19A0}.Release|x86.ActiveCfg = Release|Win32
 		{931C643E-2E91-42BD-A6F4-995D599E19A0}.Release|x86.Build.0 = Release|Win32
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Debug|x64.ActiveCfg = Debug|x64
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Debug|x64.Build.0 = Debug|x64
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Debug|x86.ActiveCfg = Debug|Win32
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Debug|x86.Build.0 = Debug|Win32
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Release|x64.ActiveCfg = Release|x64
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Release|x64.Build.0 = Release|x64
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Release|x86.ActiveCfg = Release|Win32
+		{342F4472-29D2-4505-81F3-A3E0FEA7F023}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
