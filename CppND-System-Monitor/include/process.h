@@ -10,7 +10,18 @@ It contains relevant attributes as shown below
 */
 class Process {
  public:
-  int Pid();                               // TODO: See src/process.cpp
+  Process() {}
+  
+  Process (int ipid, string user, string comm, float cputil, string ram, int uptime)
+  {
+     _pid = ipid;
+    _user = user;
+    _command = comm;
+    _cputilize = cputil;
+    _ram = ram;
+    _uptime = uptime;
+  }
+  int Pid() ;                               // TODO: See src/process.cpp
   std::string User();                      // TODO: See src/process.cpp
   std::string Command();                   // TODO: See src/process.cpp
   float CpuUtilization();                  // TODO: See src/process.cpp
@@ -20,12 +31,12 @@ class Process {
 
   // TODO: Declare any necessary private members
  private:
-    int _pid;
-    string _user;
-    string _command;
-    string _ram;
-    int _uptime;
-    
+    int _pid = 0;
+    string _user = "";
+    string _command = " ";
+    float _cputilize = 0.0;
+    string _ram = " ";
+    int _uptime = 0;
 };
 
 #endif

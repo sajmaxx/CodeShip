@@ -2,7 +2,7 @@
 #include <cctype>
 #include <sstream>
 #include <string>
-#include <vector> 
+#include <vector>
 
 #include "process.h"
 #include "linux_parser.h"

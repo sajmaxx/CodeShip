@@ -76,7 +76,6 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
     // Clear the line
     mvwprintw(window, ++row, pid_column, (string(window->_maxx-2, ' ').c_str()));
       
-   // mvwprintw(window, row, pid_column, to_string(vectorPids[i]).c_str()); 
     mvwprintw(window, row, pid_column, to_string(processes[i].Pid()).c_str());
     
     mvwprintw(window, row, user_column, processes[i].User().c_str());

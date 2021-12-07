@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <sstream>
 #include <string>
-#include <vector> 
+#include <vector>
 #include <iostream>
 
 #include "linux_parser.h"
@@ -69,8 +69,88 @@ vector<int> LinuxParser::Pids() {
   return pids;
 }
 
-// TODO: Read and return the system memory utilization
-float LinuxParser::MemoryUtilization() { return 0.0; }
+
+float LinuxParser::CPUPercentage()
+{
+  double PrevIdle, PrevIoWait, PrevUser, PrevNice, PrevSystem, PrevIrq, PrevSoftIrq, PrevSteal;
+  string dataLine, data;
+  std::ifstream stream(kProcDirectory + kStatFilename);
+  if (stream.is_open())
+  {
+        
+    std::getline(stream, dataLine);
+    std::istringstream linestream(dataLine); 
+    
+    linestream >> data >> PrevUser >> PrevNice >> PrevSystem >> PrevIdle >> PrevIoWait >> PrevIrq >> PrevSoftIrq >> PrevSteal;
+  }
+  
+  //std::cout << " prevSteal is " << PrevSteal; 
+  sleep(1);
+  
+  
+  
+  double Idle, IoWait, User, Nice, System, Irq, SoftIrq, Steal;
+  std::ifstream stream2(kProcDirectory + kStatFilename);
+  if (stream2.is_open())
+  {
+    std::getline(stream2, dataLine);
+    std::istringstream linestream2(dataLine);
+    
+      linestream2 >> data >> User >> Nice >> System >> Idle >> IoWait >> Irq >> SoftIrq >> Steal;
+  }
+  
+  
+   PrevIdle = PrevIdle + PrevIoWait;
+   Idle = Idle + IoWait;
+
+   double PrevNonIdle = PrevUser + PrevNice + PrevSystem + PrevIrq + PrevSoftIrq + PrevSteal;
+   double NonIdle = User + Nice + System + Irq + SoftIrq + Steal;
+  
+  double PrevTotal = PrevIdle + PrevNonIdle;
+  double Total = Idle + NonIdle;
+  
+  
+  double totald = Total - PrevTotal;
+  double idled = Idle - PrevIdle;
+
+  if (totald < 0.01)
+  {
+     return 77;
+  }
+  else
+  {
+  	return(totald - idled)/totald;
+  }
+    
+}
+
+
+//Read and return the system memory utilization ✔
+float LinuxParser::MemoryUtilization() 
+{ 
+  
+  string dataLine;
+  std::ifstream stream(kProcDirectory + kMeminfoFilename);
+  if (stream.is_open())
+  {
+    string something ;
+    double MemTotal;
+    double MemFree;
+    
+    std::getline(stream, dataLine);
+    std::istringstream linestream(dataLine);
+    linestream >> something >> MemTotal;
+    
+    std::getline(stream, dataLine);
+    std::istringstream linestream2(dataLine);
+    linestream2 >> something  >> MemFree;
+    
+    return (MemTotal-MemFree)/MemTotal;
+  }
+  return 0.0; 
+
+}
+
 
 // TODO: Read and return the system uptime
 long LinuxParser::UpTime() 

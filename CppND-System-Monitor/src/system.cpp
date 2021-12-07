@@ -31,8 +31,8 @@ vector<Process>& System::Processes()
    for (auto i = 0; i < vectorPids.size(); i++)
    {
      int currrentPid = vectorPids[i];
-      string usernam = LinuxParser::User(currrentPid);
-     Process locProc =   Process (currrentPid, usernam, " ", 0.0, " ", 0);
+     //string usernam = LinuxParser::User(currrentPid);
+     Process locProc =   Process (currrentPid, "", "", 0.0, "", 0); //currrentPid, usernam, " ", 0.0, " ", 0);
      
      // Process (int ipid, string user, string comm, float cputil, string ram, int uptime)
      processes_.push_back(locProc);
@@ -50,7 +50,7 @@ std::string System::Kernel()
 // TODO: Return the system's memory utilization
 float System::MemoryUtilization() 
 { 
-  return 0.0; 
+  return  LinuxParser::MemoryUtilization(); 
 }
 
 // TODO: Return the operating system name

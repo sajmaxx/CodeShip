@@ -10,7 +10,11 @@ float Processor::Utilization()
 {
   
   vector<string> cpuvector =  LinuxParser::CpuUtilization(); 
-  if (cpuvector.size() > 0)
+  
+  
+   return LinuxParser::CPUPercentage();
+  
+  /*if (cpuvector.size() > 0)
   { 
     string something = cpuvector.at(0);
     return std::stof(something); 
@@ -18,5 +22,5 @@ float Processor::Utilization()
   else
   {
     return 0;
-  }
+  }*/
 }
