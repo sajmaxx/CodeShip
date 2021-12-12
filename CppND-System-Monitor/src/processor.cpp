@@ -14,13 +14,5 @@ float Processor::Utilization()
   
    return LinuxParser::CPUPercentage();
   
-  /*if (cpuvector.size() > 0)
-  { 
-    string something = cpuvector.at(0);
-    return std::stof(something); 
-  }
-  else
-  {
-    return 0;
-  }*/
+
 }

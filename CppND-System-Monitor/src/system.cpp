@@ -28,7 +28,7 @@ Processor& System::Cpu()
 vector<Process>& System::Processes() 
 { 
    vector<int> vectorPids =  LinuxParser::Pids();
-   for (auto i = 0; i < vectorPids.size(); i++)
+   for (int i = 0; i < vectorPids.size(); i++)
    {
      int currrentPid = vectorPids[i];
      //string usernam = LinuxParser::User(currrentPid);

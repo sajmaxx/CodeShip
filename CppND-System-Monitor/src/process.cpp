@@ -18,19 +18,16 @@ int Process::Pid()
 }
 
 
-// TODO: Return this process's CPU utilization
+//Return this process's CPU utilization ✔
 float Process::CpuUtilization() 
 { 
-  return 77; //_cputilize; 
-  if (_cputilize <= 0.00001)
-  {
-    _cputilize = 0;
-    return _cputilize;
-  }
+
+  _cputilize = LinuxParser::CPUPercentageByProcess(_pid);
+  return _cputilize;
 }
 
 
-// TODO: Return the command that generated this process
+//Return the command that generated this process ✔
 string Process::Command() 
 { 
   if (_command.length() == 0)
@@ -71,9 +68,8 @@ long int Process::UpTime()
     return _uptime; 
 }
 
-// TODO: Overload the "less than" comparison operator for Process objects
-// REMOVE: [[maybe_unused]] once you define the function
-bool Process::operator<(Process const& a[[maybe_unused]]) const 
+//Overload the "less than" comparison operator for Process objects ✔
+bool Process::operator<(Process const& a) const 
 { 
-  return true; 
+  return _pid < a._pid; 
 }

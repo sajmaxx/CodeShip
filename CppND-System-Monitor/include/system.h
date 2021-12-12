@@ -20,6 +20,7 @@ class System {
 
   // TODO: Define any necessary private members
  private:
+  long _systemUptime = 0;
   Processor cpu_ = {};
   std::vector<Process> processes_ = {};
 };

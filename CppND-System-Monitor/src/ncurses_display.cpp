@@ -4,6 +4,7 @@
 #include <thread>
 #include<iostream>
 
+#include "unistd.h"
 #include "format.h"
 #include "ncurses_display.h"
 #include "system.h"
@@ -13,6 +14,9 @@ using std::string;
 using std::to_string;
 
 std::vector<int> vectorPids;
+
+
+long SystemUpTime = 0;
 
 // 50 bars uniformly displayed from 0 - 100 %
 // 2% is one bar(|)
@@ -50,8 +54,11 @@ void NCursesDisplay::DisplaySystem(System& system, WINDOW* window) {
   mvwprintw(
       window, ++row, 2,
       ("Running Processes: " + to_string(system.RunningProcesses())).c_str());
+  
+  SystemUpTime = system.UpTime();
+  
   mvwprintw(window, ++row, 2,
-            ("Up Time: " + Format::ElapsedTime(system.UpTime())).c_str());
+            ("Up Time: " + Format::ElapsedTime(SystemUpTime)).c_str());
   wrefresh(window);
 }
 
@@ -80,13 +87,16 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
     
     mvwprintw(window, row, user_column, processes[i].User().c_str());
     
-    float cpu = processes[i].CpuUtilization() * 100;
+    double cpu = processes[i].CpuUtilization();
     mvwprintw(window, row, cpu_column, to_string(cpu).substr(0, 4).c_str());
         
     mvwprintw(window, row, ram_column, processes[i].Ram().c_str());
    
+    
+    int upTimePid = (processes[i].UpTime() - SystemUpTime)/sysconf(_SC_CLK_TCK);
     mvwprintw(window, row, time_column,
-              Format::ElapsedTime(processes[i].UpTime()).c_str());
+              Format::ElapsedTime(upTimePid).c_str());
+    
     
     mvwprintw(window, row, command_column,
               processes[i].Command().substr(0, window->_maxx - 46).c_str());
