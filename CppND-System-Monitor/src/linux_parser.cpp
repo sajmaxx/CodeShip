@@ -156,7 +156,7 @@ float LinuxParser::MemoryUtilization()
 
 
 
-// TODO: Read and return the system uptime
+//  Read and return the system uptime ✔
 long LinuxParser::UpTime() 
 {
    string dataline;
@@ -295,9 +295,9 @@ double  LinuxParser::CPUPercentageByProcess(const int pid)
 string LinuxParser::Ram(int pid)
 {  
   
-  double kbRam = double(findValueByKey<double>("VmSize:     ", std::to_string(pid) + kStatusFilename));
+  double kbRam = double(findValueByKey<double>("VmSize", std::to_string(pid) + kStatusFilename));
   
-  double mbRam = (kbRam/1024.0);
+  double mbRam = round((kbRam/1024.0)*10)/10;
   
   return std::to_string(mbRam);
 }
@@ -362,11 +362,17 @@ string LinuxParser::User(int pid)
 }
 
 
+
+
+//kUptimeFilename{"/uptime"};
+//kStatFilename{"/stat"};
 long LinuxParser::UpTime(int pid) 
 { 
 
+   double SystemUpTime =  UpTime();   
+  
   string line;
-  std::ifstream stream(kProcDirectory + std::to_string(pid) + kStatFilename );
+  std::ifstream stream(kProcDirectory + std::to_string(pid) + "/" + kStatFilename );
   int count = 1;
   if(stream.is_open())
   {
@@ -376,20 +382,18 @@ long LinuxParser::UpTime(int pid)
     double  starttime;
     while (ss >> word) 
     {
-
       if (count == 22)
       {
-          starttime = stol(word); 
+          starttime = stol(word)/sysconf(_SC_CLK_TCK); 
       }
       count++;
-
       if (count > 22) 
       {
-        return starttime;
+        return  SystemUpTime - starttime;
       }
     }
   }
-  return 0; 
+  return -1; 
 }
 
 
@@ -407,24 +411,3 @@ const std::string kVersionFilename{"/version"};
 const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
   */
-
-
-/*
-
-// TODO: Read and return the number of jiffies for the system
-long LinuxParser::Jiffies() 
-{ 
-  return 0; 
-}
-// TODO: Read and return the number of active jiffies for a PID
-// REMOVE: [[maybe_unused]] once you define the function
-long LinuxParser::ActiveJiffies(int pid[[maybe_unused]]) 
-{
-  return 0;
-}
-// TODO: Read and return the number of active jiffies for the system
-long LinuxParser::ActiveJiffies() { return 0; }
-// TODO: Read and return the number of idle jiffies for the system
-long LinuxParser::IdleJiffies() { return 0; }
-
-*/

@@ -93,7 +93,7 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
     mvwprintw(window, row, ram_column, processes[i].Ram().c_str());
    
     
-    int upTimePid = (processes[i].UpTime() - SystemUpTime)/sysconf(_SC_CLK_TCK);
+    double upTimePid = (processes[i].UpTime();
     mvwprintw(window, row, time_column,
               Format::ElapsedTime(upTimePid).c_str());
     
