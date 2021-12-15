@@ -58,9 +58,9 @@ string Process::User()
 }
 
 
-// TODO: Return the age of this process (in seconds)
-long int Process::UpTime() 
-{ 
+// Return the age of this process (in seconds)
+long  Process::UpTime() 
+{    
     _uptime  =  LinuxParser::UpTime(_pid); 
     return _uptime; 
 }
