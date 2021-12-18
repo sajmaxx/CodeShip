@@ -79,30 +79,52 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
   mvwprintw(window, row, time_column, "TIME+");
   mvwprintw(window, row, command_column, "COMMAND");
   wattroff(window, COLOR_PAIR(2));
-  for (int i = 0; i < n; ++i) {
+  
+  
+  int processCount = 0, procesPID;
+  double cpu, processUpTime;
+  string processCommand, processRam;
+  for (Process processI : processes) 
+  {
+    cpu = processI.CpuUtilization();  
+    //if (cpu >  0.0001)
+    //  continue;
+
+    procesPID = processI.Pid();    
+ 
+    processCommand = processI.Command();
+    if (processCommand.length() == 0)
+      continue;
+    
+    processRam = processI.Ram(); 
+    if (stof(processRam) < 0.001)
+      continue;
+    
+    processUpTime = processI.UpTime();
+    if(processUpTime < 0.001)
+     continue;
+    
     // Clear the line
     mvwprintw(window, ++row, pid_column, (string(window->_maxx-2, ' ').c_str()));
       
-    mvwprintw(window, row, pid_column, to_string(processes[i].Pid()).c_str());
+    mvwprintw(window, row, pid_column, to_string(procesPID).c_str());
+     
+    mvwprintw(window, row, user_column, processI.User().c_str());
     
-    mvwprintw(window, row, user_column, processes[i].User().c_str());
     
-    double cpu = processes[i].CpuUtilization();
-    mvwprintw(window, row, cpu_column, to_string(cpu).substr(0, 4).c_str());
+    mvwprintw(window, row, cpu_column, to_string(cpu).substr(0,5).c_str());
         
-    mvwprintw(window, row, ram_column, processes[i].Ram().c_str());
-   
-    
-    double upTimePid = processes[i].UpTime();
-    mvwprintw(window, row, time_column,
-              Format::ElapsedTime(upTimePid).c_str());
-    
-    
-    mvwprintw(window, row, command_column,
-              processes[i].Command().substr(0, window->_maxx - 46).c_str());
+    mvwprintw(window, row, ram_column, processRam.c_str());       
 
+    mvwprintw(window, row, time_column, Format::ElapsedTime(processUpTime).c_str());
+    
+    mvwprintw(window, row, command_column, processCommand.substr(0, window->_maxx - 46).c_str());
 
+   processCount++;
+    if (processCount == n)
+      break;
   }
+  
 }
 
 void NCursesDisplay::Display(System& system, int n) {
