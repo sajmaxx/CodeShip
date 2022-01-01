@@ -1,1 +1,7 @@
-﻿  CPlusOpenGLApp.vcxproj -> C:\Users\sajan\source\repos\CodeShip\4_CPlusPlus\CPlusOpenGLApp\Debug\CPlusOpenGLApp.exe
+﻿  Airplane.cpp
+  CarClass.cpp
+  Main.cpp
+  Generating Code...
+MathLibSM.lib(MathLibSM.obj) : warning LNK4099: PDB 'MathLibSM.pdb' was not found with 'MathLibSM.lib(MathLibSM.obj)' or at 'C:\Users\sajan\source\repos\CodeShip\4_CPlusPlus\CPlusOpenGLApp\Debug\MathLibSM.pdb'; linking object as if no debug info
+MathLibSM.lib(pch.obj) : warning LNK4099: PDB 'MathLibSM.pdb' was not found with 'MathLibSM.lib(pch.obj)' or at 'C:\Users\sajan\source\repos\CodeShip\4_CPlusPlus\CPlusOpenGLApp\Debug\MathLibSM.pdb'; linking object as if no debug info
+  CPlusOpenGLApp.vcxproj -> C:\Users\sajan\source\repos\CodeShip\4_CPlusPlus\CPlusOpenGLApp\Debug\CPlusOpenGLApp.exe

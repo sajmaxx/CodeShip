@@ -21,10 +21,19 @@
     <ClCompile Include="CarClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Airplane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CarClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Airplane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\..\..\..\Temp\glut-3.7.6-bin\glut-3.7.6-bin\glut32.lib" />
   </ItemGroup>
 </Project>

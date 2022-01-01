@@ -16,6 +16,11 @@ class CarClass
 			_vinNo =  (int *)malloc(sizeof(int));
 		}
 
+
+		CarClass(const CarClass &) = delete;
+
+	    //CarClass& operator = (const CarClass&) = delete;
+
 		~CarClass()
 		{
 			free(_vinNo);

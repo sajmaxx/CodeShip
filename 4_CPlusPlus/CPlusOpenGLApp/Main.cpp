@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include<iostream>
 #include "CarClass.h"
+#include "Airplane.h"
 #include "../MathLibSM/MathLibSM.h"  // << = static library
 
 using namespace std;
@@ -108,6 +109,13 @@ void display()
 //defining a macro!
 #define MULLIFY(a,b) a*b+1
 
+
+void myMoveFunc(int &&val)
+{
+    val++;
+	std::cout << "val = " << val << std::endl;
+}
+
 int main(int argc, char** argv)
 {
 
@@ -118,10 +126,37 @@ int main(int argc, char** argv)
 	FunkyDebug();
 
 
+    Airplane boeing;
+
+    boeing.SetWingSpan(777);
+
+    Airplane airbus(boeing);
+
+
+    Airplane superEt = airbus;
+
 
     auto mahvalu = MULLIFY(4,15);
 
-    cout << " using a macro TEST VALUE IS " << mahvalu << endl; 
+    cout << " using a macro TEST VALUE IS " << mahvalu << endl;
+
+
+    
+    int i = 3;
+    int *j = &i;
+
+    int  &k = i;
+
+	float jj, kk;
+    jj = 44;
+    kk = 56;
+
+    float &&ii = jj + kk;
+
+
+    myMoveFunc(44);
+
+    myMoveFunc(jj+kk+ii);
     
     cout << "Entering the Gl initialization" << endl;
 	glutInit(&argc, argv);
@@ -134,9 +169,22 @@ int main(int argc, char** argv)
 
 
     //using pointers for objects experiment
-    CarClass *ferrari = new CarClass();
+    CarClass *ferrari =  new CarClass();
     ferrari->setNumber(777);
+
+   // not permitted due to explicit delete on declaration!  CarClass lambo = CarClass(*ferrari);
+
+   // CarClass bobo = ferrari;
+
     delete ferrari;
 
-    return 0;
+
+    CarClass *SomeCar = new CarClass();
+
+    delete SomeCar;
+
+
+
+
+	return 0;
 }

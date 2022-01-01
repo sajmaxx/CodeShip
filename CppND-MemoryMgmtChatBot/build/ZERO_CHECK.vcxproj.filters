@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sajan\source\repos\CodeShip\CppND-MemoryMgmtChatBot\build\CMakeFiles\a2bb2c14a46bc55e7d0c761ac3a1f995\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{910A52BA-B438-3361-9A96-542D51BBE275}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
