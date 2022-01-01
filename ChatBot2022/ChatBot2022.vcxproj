@@ -155,6 +155,7 @@
     <ClInclude Include="chatlogic.h" />
     <ClInclude Include="graphedge.h" />
     <ClInclude Include="graphnode.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\chatbot.png" />
@@ -163,6 +164,12 @@
     <Image Include="images\sf_bridge.jpg" />
     <Image Include="images\sf_bridge_inner.jpg" />
     <Image Include="images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ChatBot2022.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="answergraph.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
