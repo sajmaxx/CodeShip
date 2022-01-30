@@ -2,17 +2,21 @@
 #include <random>
 #include <algorithm>
 #include <ctime>
+#include<wx/bitmap.h>
 
 #include "chatlogic.h"
 #include "graphnode.h"
 #include "graphedge.h"
 #include "chatbot.h"
 
+class ChatLogic; // forward declaration
+
 // constructor WITHOUT memory allocation
 ChatBot::ChatBot()
 {
     // invalidate data handles
     _image = nullptr;
+    _currentNode = nullptr;
     _chatLogic = nullptr;
     _rootNode = nullptr;
 }
@@ -23,13 +27,14 @@ ChatBot::ChatBot(std::string filename)
     std::cout << "ChatBot Constructor" << std::endl;
     
     // invalidate data handles
+	_currentNode = nullptr;
     _chatLogic = nullptr;
     _rootNode = nullptr;
-
     // load image into heap memory
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
 
+//rule 1 of 5
 ChatBot::~ChatBot()
 {
     std::cout << "ChatBot Destructor" << std::endl;
@@ -43,7 +48,67 @@ ChatBot::~ChatBot()
 }
 
 //// STUDENT CODE
-////
+
+// 2 of 5
+//Copy Constructor
+ChatBot::ChatBot(ChatBot &OrigBot)
+{
+	this->_image =  OrigBot._image; //needs to be copy of image from OrigBot!
+    this->_currentNode = OrigBot._currentNode;
+	this->_chatLogic = OrigBot._chatLogic;
+	this->_rootNode =  OrigBot._rootNode;
+}
+
+
+// 3 of 5
+//Copy operator Assignment
+ChatBot & ChatBot::operator =(ChatBot &OtherBot)
+{
+	if(this == &OtherBot)
+        return *this;
+
+	this->_image =  OtherBot._image; //needs to be copy of image from OrigBot!
+    this->_chatLogic = OtherBot._chatLogic;
+    this->_rootNode =  OtherBot._rootNode; 
+    return *this;
+}
+
+
+// 4 of 5 move Constructor
+ChatBot::ChatBot(ChatBot&& MoveBot)
+{
+    
+	this->_image = MoveBot._image;
+    MoveBot._image = nullptr;
+    this->_currentNode = MoveBot._currentNode;
+    MoveBot._currentNode = nullptr;
+    this->_rootNode = MoveBot._rootNode;
+    MoveBot._rootNode = nullptr;
+    this->_chatLogic = MoveBot._chatLogic;
+    MoveBot._chatLogic = nullptr;
+}
+
+//5 of 5 Move operator Assignment
+ChatBot& ChatBot::operator=(ChatBot&& MoveBot)
+{
+    if(this == &MoveBot)
+    {
+	    return *this;
+    }
+
+  	this->_image = MoveBot._image;
+    MoveBot._image = nullptr;
+    this->_currentNode = MoveBot._currentNode;
+    MoveBot._currentNode = nullptr;
+    this->_rootNode = MoveBot._rootNode;
+    MoveBot._rootNode = nullptr;
+    this->_chatLogic = MoveBot._chatLogic;
+    MoveBot._chatLogic = nullptr;
+
+    return *this;
+
+}
+
 
 ////
 //// EOF STUDENT CODE
