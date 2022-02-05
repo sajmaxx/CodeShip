@@ -53,6 +53,7 @@ ChatBot::~ChatBot()
 //Copy Constructor
 ChatBot::ChatBot(ChatBot &OrigBot)
 {
+    cout << "ChatBot Copy Constructor " << endl;
 	this->_image =  OrigBot._image; //needs to be copy of image from OrigBot!
     this->_currentNode = OrigBot._currentNode;
 	this->_chatLogic = OrigBot._chatLogic;
@@ -65,8 +66,12 @@ ChatBot::ChatBot(ChatBot &OrigBot)
 ChatBot & ChatBot::operator =(ChatBot &OtherBot)
 {
 	if(this == &OtherBot)
+	{
+        cout << "ChatBot Copy Assignment to Self " << endl;
         return *this;
+    }
 
+    cout << "ChatBot Copy Assignment " << endl;
 	this->_image =  OtherBot._image; //needs to be copy of image from OrigBot!
     this->_chatLogic = OtherBot._chatLogic;
     this->_rootNode =  OtherBot._rootNode; 
@@ -77,7 +82,7 @@ ChatBot & ChatBot::operator =(ChatBot &OtherBot)
 // 4 of 5 move Constructor
 ChatBot::ChatBot(ChatBot&& MoveBot)
 {
-    
+    cout << " ChatBot Move Constructor " << endl;
 	this->_image = MoveBot._image;
     MoveBot._image = nullptr;
     this->_currentNode = MoveBot._currentNode;
@@ -93,8 +98,10 @@ ChatBot& ChatBot::operator=(ChatBot&& MoveBot)
 {
     if(this == &MoveBot)
     {
+        cout << "ChatBot Move Assignment to Self" << endl;
 	    return *this;
     }
+
 
   	this->_image = MoveBot._image;
     MoveBot._image = nullptr;
