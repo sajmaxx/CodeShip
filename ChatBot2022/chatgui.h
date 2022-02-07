@@ -17,7 +17,7 @@ private:
     wxBitmap _image;
 
     //// STUDENT CODE
-    shared_ptr<ChatLogic> _chatLogic;
+    unique_ptr<ChatLogic> _chatLogic;
 
 
 public:
@@ -26,11 +26,9 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    shared_ptr<ChatLogic> GetChatLogicHandle()
+    ChatLogic* GetChatLogicHandle()
     {
-        return _chatLogic;
-       // unique_ptr<ChatLogic> n
-	   // return move(_chatLogic);  //using move semantics to tranfer this resource to caller
+        return _chatLogic.get();
     }
 
     // events

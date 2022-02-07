@@ -118,7 +118,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     ////
 
     // create chat logic instance
-    _chatLogic = shared_ptr<ChatLogic>(new ChatLogic()); 
+    _chatLogic = unique_ptr<ChatLogic>(new ChatLogic()); 
 
     // pass pointer to chatbot dialog so answers can be displayed in GUI
     _chatLogic->SetPanelDialogHandle(this);
@@ -133,7 +133,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     //// STUDENT CODE
-    //delete _chatLogic;  using smart pointer shared_ptr for now.
+    //delete _chatLogic;  using smart pointer - so no need to delete
     //// EOF STUDENT CODE
 }
 
