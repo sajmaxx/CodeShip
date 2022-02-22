@@ -10,6 +10,7 @@ class ChatBot;
 class GraphEdge;
 class GraphNode;
 
+using namespace std;
 class ChatLogic
 {
 private:
@@ -17,8 +18,9 @@ private:
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
+	std::vector<unique_ptr<GraphNode>> _nodes; //1.	Are exclusively ownership via Smart Pointer: unique_ptr
+
+	//std::vector<GraphEdge *> _edges; //removing this ownership SM 2/21/22 Task4
 
     ////
     //// EOF STUDENT CODE
@@ -34,6 +36,8 @@ private:
     // proprietary functions
     template <typename T>
     void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
+    void ProcessNodes(tokenlist tokens, int id);
+    void ProcessGraphEdges(tokenlist tokens, int id);
 
 public:
     // constructor / destructor

@@ -10,18 +10,17 @@ GraphNode::GraphNode(int id)
 GraphNode::~GraphNode()
 {
     //// STUDENT CODE
-    ////
 
     //delete _chatBot; 
-
-    ////
     //// EOF STUDENT CODE
 }
+
 
 void GraphNode::AddToken(std::string token)
 {
     _answers.push_back(token);
 }
+
 
 void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
 {
