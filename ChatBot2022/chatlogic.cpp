@@ -73,6 +73,8 @@ void ChatLogic::AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T 
     }
 }
 
+
+
 void ChatLogic::ProcessNodes(ChatLogic::tokenlist tokens, int id)
 {
 
@@ -100,6 +102,7 @@ void ChatLogic::ProcessNodes(ChatLogic::tokenlist tokens, int id)
 }
 
 
+//SM 2/21/22 Task4
 void ChatLogic::ProcessGraphEdges(ChatLogic::tokenlist tokens, int id)
 {
      // find tokens for incoming (parent) and outgoing (child) node
@@ -133,17 +136,19 @@ void ChatLogic::ProcessGraphEdges(ChatLogic::tokenlist tokens, int id)
 		//// create new edge
 		GraphEdge *edge = new GraphEdge(id);
 
+        edge->SetParentNode(parentNode);
 		edge->SetChildNode(childNode);
-		edge->SetParentNode(parentNode);
+		
 
 		//_edges.push_back(edge);
 
 		//// find all keywords for current node
 		AddAllTokensToElement("KEYWORD", tokens, *edge);
 
-		//// store reference in child node and parent node
-		childNode->AddEdgeToParentNode(edge);
+		//// store reference in  parent node AND child node
 		parentNode->AddEdgeToChildNode(edge);
+		childNode->AddEdgeToParentNode(edge);
+	
 	}
 }
 
