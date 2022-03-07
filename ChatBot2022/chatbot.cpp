@@ -85,6 +85,7 @@ ChatBot::ChatBot(ChatBot&& MoveBot)
 {
     cout << " ChatBot Move Constructor " << endl;
 	this->_image = move(MoveBot._image);
+	MoveBot._image = NULL;
     this->_currentNode = move(MoveBot._currentNode);
      this->_rootNode = MoveBot._rootNode;
     this->_chatLogic = move(MoveBot._chatLogic);
