@@ -13,7 +13,7 @@ const int height = 736;
 // wxWidgets APP
 IMPLEMENT_APP(ChatBotApp);
 
-std::string dataPath = ""; // sajm -> "../";
+std::string dataPath = "../";
 std::string imgBasePath = dataPath + "images/";
 
 bool ChatBotApp::OnInit()
@@ -61,9 +61,8 @@ void ChatBotFrame::OnEnter(wxCommandEvent &WXUNUSED(event))
     // delete text in text control
     _userTextCtrl->Clear();
 
-    // send user text to chatbot
-    auto chatlogic = _panelDialog->GetChatLogicHandle();
-    chatlogic->SendMessageToChatbot(std::string(userText.mb_str()));
+    // send user text to chatbot 
+     _panelDialog->GetChatLogicHandle()->SendMessageToChatbot(std::string(userText.mb_str()));
 }
 
 BEGIN_EVENT_TABLE(ChatBotFrameImagePanel, wxPanel)
@@ -119,13 +118,13 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     ////
 
     // create chat logic instance
-    _chatLogic = unique_ptr<ChatLogic>(new ChatLogic()); 
+    _chatLogic = new ChatLogic(); 
 
     // pass pointer to chatbot dialog so answers can be displayed in GUI
     _chatLogic->SetPanelDialogHandle(this);
 
     // load answer graph from file
-    _chatLogic->LoadAnswerGraphFromFile(dataPath + "answergraph.txt"); //src/
+    _chatLogic->LoadAnswerGraphFromFile(dataPath + "src/answergraph.txt");
 
     ////
     //// EOF STUDENT CODE
@@ -134,7 +133,11 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     //// STUDENT CODE
-    //delete _chatLogic;  using smart pointer - so no need to delete
+    ////
+
+    delete _chatLogic;
+
+    ////
     //// EOF STUDENT CODE
 }
 
