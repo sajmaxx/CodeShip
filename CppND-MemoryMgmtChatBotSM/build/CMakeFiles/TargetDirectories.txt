@@ -1,3 +1,0 @@
-C:/Users/sajan/source/repos/CodeShip/CppND-MemoryMgmtChatBot/build/CMakeFiles/membot.dir
-C:/Users/sajan/source/repos/CodeShip/CppND-MemoryMgmtChatBot/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/sajan/source/repos/CodeShip/CppND-MemoryMgmtChatBot/build/CMakeFiles/ZERO_CHECK.dir

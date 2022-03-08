@@ -1,6 +1,8 @@
 #include "graphedge.h"
 #include "graphnode.h"
 
+#include "chatlogic.h"
+
 GraphNode::GraphNode(int id)
 {
     _id = id;
@@ -9,18 +11,17 @@ GraphNode::GraphNode(int id)
 GraphNode::~GraphNode()
 {
     //// STUDENT CODE
-    ////
 
-    delete _chatBot; 
-
-    ////
+    //delete _chatBot; 
     //// EOF STUDENT CODE
 }
+
 
 void GraphNode::AddToken(std::string token)
 {
     _answers.push_back(token);
 }
+
 
 void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
 {
@@ -29,31 +30,33 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
 
 void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
 {
-    _childEdges.push_back(edge);
+    _childEdges.emplace_back(edge);
 }
 
 //// STUDENT CODE
 ////
-void GraphNode::MoveChatbotHere(ChatBot *chatbot)
+void GraphNode::MoveChatbotHere(ChatBot &chatbot)
 {
-    _chatBot = chatbot;
-    _chatBot->SetCurrentNode(this);
+   _chatBot = move(chatbot);
+    auto locchatlogic = chatbot.GetChatLogicHandle();
+    locchatlogic->SetChatbotHandle(&_chatBot);
+   _chatBot.SetCurrentNode(this);
 }
 
 void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
     newNode->MoveChatbotHere(_chatBot);
-    _chatBot = nullptr; // invalidate pointer at source
 }
-////
+
 //// EOF STUDENT CODE
+
 
 GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
 {
     //// STUDENT CODE
     ////
 
-    return _childEdges[index];
+    return _childEdges[index].get();
 
     ////
     //// EOF STUDENT CODE
