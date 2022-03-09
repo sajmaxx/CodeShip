@@ -57,7 +57,7 @@ ChatBot::ChatBot(ChatBot &OrigBot)
     this->_currentNode = OrigBot._currentNode;
 	
     this->_chatLogic = OrigBot._chatLogic;
-    _chatLogic->SetChatBotHandle(this);
+    _chatLogic->SetChatbotHandle(this);
 
 	this->_rootNode =  OrigBot._rootNode;
 }
@@ -78,7 +78,7 @@ ChatBot & ChatBot::operator =(ChatBot &OtherBot)
     this->_currentNode = OtherBot._currentNode;
 
     this->_chatLogic = OtherBot._chatLogic;
-    _chatLogic->SetChatBotHandle(this);
+    _chatLogic->SetChatbotHandle(this);
 
     this->_rootNode =  OtherBot._rootNode; 
     return *this;
@@ -95,7 +95,7 @@ ChatBot::ChatBot(ChatBot&& MoveBot)
      this->_rootNode = MoveBot._rootNode;
 
     this->_chatLogic = move(MoveBot._chatLogic);
-    _chatLogic->SetChatBotHandle(this);
+    _chatLogic->SetChatbotHandle(this);
 }
 
 //5 of 5 Move operator Assignment
@@ -114,7 +114,7 @@ ChatBot& ChatBot::operator=(ChatBot&& MoveBot)
     this->_rootNode = move(MoveBot._rootNode);
     
     this->_chatLogic = move(MoveBot._chatLogic);
-    _chatLogic->SetChatBotHandle(this);
+    _chatLogic->SetChatbotHandle(this);
 
     return *this;
 }
