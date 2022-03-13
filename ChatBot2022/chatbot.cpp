@@ -54,7 +54,7 @@ ChatBot::~ChatBot()
 ChatBot::ChatBot(ChatBot &OrigBot)
 {
     cout << "ChatBot Copy Constructor " << endl;
-	this->_image =  OrigBot._image; //needs to be copy of image from OrigBot!
+	this->_image =  new wxBitmap(*OrigBot.GetImageHandle());  //Rev1:3 SM March 12 2022 //needs to be copy of image from OrigBot!
     this->_currentNode = OrigBot._currentNode;
 	this->_chatLogic = OrigBot._chatLogic;
 	this->_rootNode =  OrigBot._rootNode;
@@ -72,8 +72,8 @@ ChatBot & ChatBot::operator =(ChatBot &OtherBot)
     }
 
     cout << "ChatBot Copy Assignment " << endl;
-	this->_image =  OtherBot._image; //needs to be copy of image from OrigBot!
-    this->_currentNode = OtherBot._currentNode;
+    this->_image =  new wxBitmap(*OtherBot.GetImageHandle());  //Rev1:3 SM March 12 2022 //needs to be copy of image from OrigBot!
+	this->_currentNode = OtherBot._currentNode;
     this->_chatLogic = OtherBot._chatLogic;
     this->_rootNode =  OtherBot._rootNode; 
     return *this;
