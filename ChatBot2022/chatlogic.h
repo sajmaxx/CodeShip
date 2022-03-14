@@ -16,14 +16,10 @@ class ChatLogic
 {
 private:
     //// STUDENT CODE
-    ////
 
     // data handles (owned)
-	std::vector<unique_ptr<GraphNode>> _nodes; //1.	Are exclusively ownership via Smart Pointer: unique_ptr
+	std::vector<unique_ptr<GraphNode>> _nodes; //1.	Are exclusively ownership via Smart Pointer: unique_ptr :: SM 2/21/22 Task4
 
-	//std::vector<GraphEdge *> _edges; //removing this ownership SM 2/21/22 Task4
-
-    ////
     //// EOF STUDENT CODE
 
     // data handles (not owned)

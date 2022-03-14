@@ -37,7 +37,7 @@ void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
 ////
 void GraphNode::MoveChatbotHere(ChatBot chatbot) //Rev1:4b SM March 12 2022 //
 {
-   _chatBot = &chatbot;
+   _chatBot = new ChatBot(move(chatbot));
     auto locchatlogic = chatbot.GetChatLogicHandle();
     locchatlogic->SetChatbotHandle(_chatBot);
    _chatBot->SetCurrentNode(this);
