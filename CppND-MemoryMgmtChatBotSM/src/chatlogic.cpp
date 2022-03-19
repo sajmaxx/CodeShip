@@ -122,7 +122,7 @@ void ChatLogic::ProcessGraphEdges(ChatLogic::tokenlist tokens, int id)
 
 		//// store reference in  parent node AND child node
 		parentNode->AddEdgeToChildNode(edge);
-		childNode->AddEdgeToParentNode(edge);
+		childNode->AddEdgeToParentNode(move(edge));  //Rev1:1 SM March 12 2022
 	
 	}
 }
@@ -233,7 +233,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     ChatBot locChatBot("../images/chatbot.png");
     locChatBot.SetChatLogicHandle(this);
 	locChatBot.SetRootNode(rootNode);
-    rootNode->MoveChatbotHere(locChatBot);
+    rootNode->MoveChatbotHere(move(locChatBot)); //Rev1:2 SM March 12 2022
     //// EOF STUDENT CODE
 }
 

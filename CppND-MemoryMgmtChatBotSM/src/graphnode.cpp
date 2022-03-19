@@ -35,17 +35,17 @@ void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
 
 //// STUDENT CODE
 ////
-void GraphNode::MoveChatbotHere(ChatBot &chatbot)
+void GraphNode::MoveChatbotHere(ChatBot chatbot) //Rev1:4b SM March 12 2022 //
 {
-   _chatBot = move(chatbot);
+   _chatBot = new ChatBot(move(chatbot));
     auto locchatlogic = chatbot.GetChatLogicHandle();
-    locchatlogic->SetChatbotHandle(&_chatBot);
-   _chatBot.SetCurrentNode(this);
+    locchatlogic->SetChatbotHandle(_chatBot);
+   _chatBot->SetCurrentNode(this);
 }
 
 void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
-    newNode->MoveChatbotHere(_chatBot);
+    newNode->MoveChatbotHere(move(*_chatBot));
 }
 
 //// EOF STUDENT CODE
