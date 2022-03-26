@@ -2,6 +2,7 @@
 #include <random>
 #include <algorithm>
 #include <ctime>
+#include<wx/bitmap.h>
 
 #include "chatlogic.h"
 #include "graphnode.h"
@@ -53,12 +54,9 @@ ChatBot::~ChatBot()
 ChatBot::ChatBot(ChatBot &OrigBot)
 {
     cout << "ChatBot Copy Constructor " << endl;
-	this->_image =  OrigBot._image; //needs to be copy of image from OrigBot!
+	this->_image =  new wxBitmap(*OrigBot.GetImageHandle());  //Rev1:3 SM March 12 2022 //needs to be copy of image from OrigBot!
     this->_currentNode = OrigBot._currentNode;
-	
-    this->_chatLogic = OrigBot._chatLogic;
-    _chatLogic->SetChatbotHandle(this);
-
+	this->_chatLogic = OrigBot._chatLogic;
 	this->_rootNode =  OrigBot._rootNode;
 }
 
@@ -74,12 +72,9 @@ ChatBot & ChatBot::operator =(ChatBot &OtherBot)
     }
 
     cout << "ChatBot Copy Assignment " << endl;
-	this->_image =  OtherBot._image; //needs to be copy of image from OrigBot!
-    this->_currentNode = OtherBot._currentNode;
-
+    this->_image =  new wxBitmap(*OtherBot.GetImageHandle());  //Rev1:3 SM March 12 2022 //needs to be copy of image from OrigBot!
+	this->_currentNode = OtherBot._currentNode;
     this->_chatLogic = OtherBot._chatLogic;
-    _chatLogic->SetChatbotHandle(this);
-
     this->_rootNode =  OtherBot._rootNode; 
     return *this;
 }
@@ -89,13 +84,13 @@ ChatBot & ChatBot::operator =(ChatBot &OtherBot)
 ChatBot::ChatBot(ChatBot&& MoveBot)
 {
     cout << " ChatBot Move Constructor " << endl;
-	this->_image = move(MoveBot._image);
-	MoveBot._image = NULL;
-    this->_currentNode = move(MoveBot._currentNode);
-     this->_rootNode = MoveBot._rootNode;
 
+	this->_image =  move(MoveBot._image);
+	MoveBot._image = NULL;
+
+    this->_currentNode = move(MoveBot._currentNode);
+     this->_rootNode = move(MoveBot._rootNode);
     this->_chatLogic = move(MoveBot._chatLogic);
-    _chatLogic->SetChatbotHandle(this);
 }
 
 //5 of 5 Move operator Assignment
@@ -108,14 +103,13 @@ ChatBot& ChatBot::operator=(ChatBot&& MoveBot)
     }
 
     cout << "ChatBot Move Assignment Operator" << endl;
-  	this->_image = move(MoveBot._image);
+
+	this->_image =  move(MoveBot._image);
     MoveBot._image = NULL;
+    
     this->_currentNode = move(MoveBot._currentNode);
     this->_rootNode = move(MoveBot._rootNode);
-    
     this->_chatLogic = move(MoveBot._chatLogic);
-    _chatLogic->SetChatbotHandle(this);
-
     return *this;
 }
 
