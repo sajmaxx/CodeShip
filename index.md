@@ -22,13 +22,13 @@ This makes it interesting to be able to have those choices for instances of clas
 
 ## Value Type allocated on the heap
 Here is an example:
-```c++
+```c
 int *winningNum = new int(777);
 auto losingnum = *winningNum - 111;
 delete winningNum;
  
 ## Reference Type allocated on the heap
-```c++
+```c
 Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
 delete hybdridCar;
