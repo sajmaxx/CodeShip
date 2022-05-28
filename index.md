@@ -39,8 +39,8 @@ delete hybdridCar;
 
 ## Object behavior in C++,  the Rule of 3 and the  Rule of 5 
 
+### Some background:
 In this section, I will briefly explain how to understand memory management with classes, especially when they compose resources on the heap.
-
 Main thing to remember is that a class in C++ has a default copy constructor and copy assignment operator.  The critical but understandable principle here is that the copy constructor by default performs a shallow copy and so does the default copy assignment operator.
 Follow along this very basic usage  class type UFO that relies in the default copy constructor and default assignment operator.
  
@@ -84,7 +84,64 @@ int main()
  As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of  heap allocated member data. (In the case of ufoOb3 this happens after the copy assignment operator) 
 
 
+ ## Rule of 3:
+This is where the rule of 3 comes in. Which basically means if  there is the need for a custom destructor or a copy constructor override, or a copy assignment override then all 3 are needed.
+That is to say,  an object of this class type, owns something that is defined on the heap, that needs a deep copy!
+ 
+Here is the above class, amended for the purpose of honoring rule of 3.
 
+```
+ class UFO
+{
+    string _name;
+    int * _sightHeight;
+    int * _zoneIndex;
+    
+public:
+    UFO(int inputheight)
+    {
+        _name = "ufo";
+        _sightHeight = new int(inputheight);
+        _zoneIndex = new int(777);
+    }
+
+    ~UFO()
+    {
+        delete _sightHeight;
+    }
+
+
+    //
+    //Copy Consturctor
+    UFO(const UFO &incomingUFO)
+    {
+        _name = incomingUFO._name;
+        _sightHeight = new int(0);
+        *_sightHeight = *incomingUFO._sightHeight;
+        _zoneIndex = new int(0);
+        *_zoneIndex  = *incomingUFO._zoneIndex;
+    }
+
+    //Copy Assignment Operator
+    UFO &operator=(const UFO &incomingUFO)
+    {
+        if(this == &incomingUFO)
+            return *this;
+
+        _name = incomingUFO._name;
+        _sightHeight = new int(0);
+        *_sightHeight = *incomingUFO._sightHeight;
+        _zoneIndex = new int(0);
+        *_zoneIndex  = *incomingUFO._zoneIndex;
+        return *this;
+    }
+   
+} 
+```
+
+
+
+-------------------------------------------------------------------------------------
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sajmaxx/CodeShip/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
