@@ -4,31 +4,26 @@
  This article touches upon several modern C++ concepts, that will enable one to make an application that is capable of using resources efficiently and support asynchronous programming.
 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Memory Management through hardware and software:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+   There are 2 kinds of  memory as every one knows, the stack and the heap.
 
-```markdown
-Syntax highlighted code block
+The heap memory has  a much larger size availability for developers to allocate objects/types on.  Objects stored on the heap, need to be garbage collected programmatically( even with smart points  I consider this a memory garbage collection via code ... more on this later). The downside to using the heap is the memory access is slow.
 
-# Header 1
-## Header 2
-### Header 3
+The stack memory is quicker to access and write into. The stack memory is order of magnitude smaller in limit of memory available for use. So great care has to be taken care in terms of choosing to use the stack and not maintain data on it for great lengths of time. Types declared on stack have the great advantage of being automatically garbage collected, as they go out of  scope.
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## C++ Value types versus Reference Types - true flexibility and control     
 
-**Bold** and _Italic_ and `Code` text
+In C++ unlike some other languages, you can choose to instantiate either an object or a basic variable type either on a stack or the heap.
 
-[Link](url) and ![Image](src)
-```
+This makes it interesting to be able to have those choices for instances of classes or structs, or basic types like int, float, double, char to be instantiated on heap or stack.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
+
+
+
 
 ### Jekyll Themes
 
