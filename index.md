@@ -70,9 +70,9 @@ int main()
 {
   UFO *ufOb1 =  new UFO(1000);
  
-  UFO *ufOb2 = ufOb1;
-  
-  UFO ufOb3 = UFO(ufOb1);
+  UFO *ufOb2 = new UFO(ufOb1);  
+  UFO *ufOb3;
+  ufOb3 = ufOb1;
   
   cout << "Addresses of the 3 are " << ufOb1 << " " << ufOb2 << " " << ufOb3 << endl;
   delete ufOb1;
