@@ -68,17 +68,16 @@ public:
         
 int main()
 {
- 	using namespace std;
-
-  UFO *ufOb1 =  new UFO(1000);
+	  UFO *ufOb1 =  new UFO(1000);
  
-  UFO *ufOb2 = new UFO(*ufOb1);  
+	  UFO *ufOb2 = new UFO(*ufOb1);  
 
- 	UFO *ufOb3;
-	 ufOb3 = ufOb2;
-	  
-	 cout << "Addresses of the 3 are " << ufOb1 << " " << ufOb2 << " " << ufOb3 << endl;
-	 delete ufOb1;
+	  UFO ufOb3 = *ufOb2;
+
+	cout << "Addresses of the 3 object pointers are " << ufOb1 << " "  << ufOb2 << " " << &ufOb3 << endl;
+
+	cout << "Addresses of the pointer datas are " << ufOb1->GetDataAddress() << " " << ufOb2->GetDataAddress() << " " << ufOb3.GetDataAddress() << endl;
+	delete ufOb1;
 }
  ```
  
