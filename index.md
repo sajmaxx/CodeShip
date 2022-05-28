@@ -64,7 +64,7 @@ public:
         delete _sightHeight;
     }
  
- }    
+ };    
         
 int main()
 {
