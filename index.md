@@ -64,13 +64,19 @@ public:
         delete _sightHeight;
     }
  
-        }    
+ }    
+        
 int main()
 {
-  UFO * uofOb1 =  new UFO(1000);
+  UFO *ufOb1 =  new UFO(1000);
+ 
+  UFO *ufOb2 = ufOb1;
   
-  delete uofOb1;
- return 0;
+  UFO ufOb3 = UFO(ufOb1);
+  
+  cout << "Addresses of the 3 are " << ufOb1 << " " << ufOb2 << " " << ufOb3 << endl;
+  delete ufOb1;
+  return 0;
 }
  ```
  
