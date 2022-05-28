@@ -80,7 +80,7 @@ int main()
 }
  ```
  
- As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of that heap allocated data. (In the case of ufoOb3 this happens after the copy assignment operator) 
+ As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of  heap allocated member data. (In the case of ufoOb3 this happens after the copy assignment operator) 
 
 
 
