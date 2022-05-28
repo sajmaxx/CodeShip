@@ -30,7 +30,7 @@ delete winningNum;
 Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
 delete hybdridCar;
-For a detailed treatment on this subject, check out Stack and Heap Article [link](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
+ [For a detailed treatment on this subject, check out Stack and Heap Article](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
 
 
