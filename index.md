@@ -65,6 +65,13 @@ public:
     }
  
         }    
+int main()
+{
+  UFO * uofOb1 =  new UFO(1000);
+  
+  delete uofOb1;
+ return 0;
+}
  ```
  
  As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of that heap allocated data. (In the case of ufoOb3 this happens after the copy assignment operator) 
