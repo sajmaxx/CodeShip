@@ -34,9 +34,40 @@ Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
 delete hybdridCar;
 ```
+[For a detailed treatment on this subject, check out Stack and Heap Article](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
- [For a detailed treatment on this subject, check out Stack and Heap Article](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
+## Object behavior in C++,  the Rule of 3 and the  Rule of 5 
+
+In this section, I will briefly explain how to understand memory management with classes, especially when they compose resources on the heap.
+
+Main thing to remember is that a class in C++ has a default copy constructor and copy assignment operator.  The critical but understandable principle here is that the copy constructor by default performs a shallow copy and so does the default copy assignment operator.
+Follow along this very basic usage  class type UFO that relies in the default copy constructor and default assignment operator.
+ 
+``` 
+class UFO
+{
+    string _name;
+    int * _sightHeight;
+    int * _zoneIndex;
+    
+public:
+    UFO(int inputheight)
+    {
+        _name = "ufo";
+        _sightHeight = new int(inputheight);
+        _zoneIndex = new int(777);
+    }
+
+    ~UFO()
+    {
+        delete _sightHeight;
+    }
+ 
+        }    
+ ```
+ 
+ As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of that heap allocated data. (In the case of ufoOb3 this happens after the copy assignment operator) 
 
 
 
