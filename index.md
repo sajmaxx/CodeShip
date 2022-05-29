@@ -355,12 +355,13 @@ One more thing: the method called within async, would be a standard worker metho
 Also since there is no  direct interaction with thread, there is no join needed to do an extra check to make sure thread is closed.
  With the Async Future setup we have 3 steps:
 
-    Define worker method with return type needed and inputs needed
-    Assign the future to the async call as shown below:
-        future<type> = async(workermethod); or using async() with a lambda method within it.
-    Call future.get(); 
+    1. Define worker method with return type needed and inputs needed
+    2. Assign the future to the async call as shown below:
+    3. future<type> = async(workermethod); or using async() with a lambda method within it.
+    4. Call future.get(); 
 
- ### An Example:
+### An Example:
+```
     // AsyncJets.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include <iostream>
@@ -434,7 +435,7 @@ int main()
     }
 
 }
-
+```
 
 
 	
