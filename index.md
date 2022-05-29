@@ -83,7 +83,6 @@ int main()
  
  As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of  heap allocated member data. (In the case of ufoOb3 this happens after the copy assignment operator) 
 
-
 ## Rule of 3:
 This is where the rule of 3 comes in. Which basically means if  there is the need for a custom destructor or a copy constructor override, or a copy assignment override then all 3 are needed.
 That is to say,  an object of this class type, owns something that is defined on the heap, that needs a deep copy!
