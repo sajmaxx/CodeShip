@@ -83,7 +83,7 @@ int main()
  
  As you can see from the console outputs, both ufoOb2 and ufoOb3 end up possessing a  pointer to the same instance of  heap allocated member data. (In the case of ufoOb3 this happens after the copy assignment operator) 
 
-## Rule of 3:
+### Rule of 3:
 This is where the rule of 3 comes in. Which basically means if  there is the need for a custom destructor or a copy constructor override, or a copy assignment override then all 3 are needed.
 That is to say,  an object of this class type, owns something that is defined on the heap, that needs a deep copy!
  
@@ -139,7 +139,7 @@ public:
 ```
 
 
-## Rule of 5:
+### Rule of 5:
  Rule of 5, extends upon rule of 3, requiring two provide a move constructor and a move assignment operator using r value reference parameters (r value reference is a C++ 11 standard and here is an [article on it](http://thbecker.net/articles/rvalue_references/section_01.html).
     The main purpose of enforcing rule of 5 on a class would be, if objects of these type would qualify and be suitable for transferring dyanmically allocated resources within it, from an "outgoing" object to a new/fresh incoming object. That is to say when there is a need to freshen up a new object and destroy an older instance.
 ```
@@ -225,6 +225,37 @@ public:
     }
 } 
 ```
+
+## Smart Pointers
+ In modern C++  (since C++ 11), we can use smart pointers.
+What are smart pointers?
+Smart pointers unlike "raw pointers" can self-manage the resource assigned to it.
+There are 3 kinds. They are:
+
+    unique_ptr
+    shared_ptr
+    weak_ptr
+
+Both unique_ptr and shared_ptr types will own and manage the dynamically allocated resource that it holds on assignment.
+The weak_ptr is a dependency pointer that works off the shared_ptr.
+
+### Unique  Pointer
+The unique_ptr is the closest form to being used like a classical raw pointer, except that the source gets destroyed once the pointer goes out of scope.
+    Example of use of a unique_ptr:
+     unique_ptr<int> uniqueId(new int(7));
+Imagine we have a class called Airplane.
+    Then we can use unique pointer as follows:
+     unique_ptr<Airplane> uniqPlane(new Airplane(300, 400, "747"));
+
+### Shared Pointer
+  The  shared_ptr as the name suggests, allows for multiple references to the data pointed to by the shared_ptr. A counter is used to increment every time there is a pointing to that data.
+This is called reference counting. Once every reference to the memory goes out of scope, the shared_ptr will destroy the resource.
+ 
+### Weak Pointer 
+ The weak_ptr as I stated above, works always as a dependent on the shared_ptr. 
+As the name would suggest, this pointer assignment to a shared_ptr resource will not increment the reference counting.
+
+
 
 
 -------------------------------------------------------------------------------------
