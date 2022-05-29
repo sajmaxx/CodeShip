@@ -256,7 +256,92 @@ This is called reference counting. Once every reference to the memory goes out o
 As the name would suggest, this pointer assignment to a shared_ptr resource will not increment the reference counting.
 
 
+	
+## Synchronous and Asynchronous
 
+Synchronous programming is what we are most intuitively used to, when it comes to programming.
+
+Within a major block of code, we perform work using functions a, b, c in a serial order, always in the main thread and working through each unit of work in a serial manner.
+
+ Asynchronous programming, provides the ability to perform some work, that can be done independent of some main work done on a main thread, on a worker thread. This can be accomplished by directly controlling the threads, or using the task-threadpool technology of operating systems via the C++ async functionality.
+
+	
+	
+	
+## Threads And Communication between them
+ Moving Data from Main Thread to Worker Thread
+
+Here we shall examples of how we can move data for consumption by a worker thread to do work, from a main thread.
+
+With multi-threading in C++, one can send data forward from a main thread to a worker-thread using 2 main ways. One way is to use  lambda functions., the other way is to use variadic template technique.
+
+I will cover both examples soon.
+
+### Futures and Promises
+
+The future and promise coupling is one way of sending data back from a worker thread to the main thread. This coupling structure, involves a repeated set of boiler plate code, along with an accompanying worker method that has to be aware of a promise via a  move semantic parameter.
+
+Here is the example, which shows the declaration of a promise, hooking the promise.get_future() to a corresponding future. Send promise as a move reference, along with one way input parameters that may be needed.  The future.get(), or future.wait(), or futrure.wait_for() can be used accordingly to get control back to main thread, with a decision to be able to use the future returned data.
+
+
+promise<string> promiseWorkName;
+future<string> futureWorkName = promiseWorkName.get_future();
+
+
+Then a function is defined to be used by worker thread that uses move semantic referencing for taking in the promise. 
+
+The promise does the job of return results from worker method.
+
+Worker method that will work in a background thread using a promise is as  follows!
+
+void doSomeWork(promise<string> && getbackName, string name, int age, int ssn)
+{
+
+       do some works here.. .work really really hard...
+       and finally
+    getbackName.set_value(workedoutName);
+}
+
+Now within your main function
+
+void main()
+{
+
+   promise<string> promisedLandName;
+   future<string> futureLandName = promisedLandName.get_future();
+
+   thread workerLandThread(move(promisedLandName), areaLotName, zipcode, countrycode);
+
+    
+   string workedoutLandName = futureLandName.get();     
+
+
+   workerLandThread.join();
+
+}
+
+ Then, we start listening on the other end of the communication channel by calling the function get() on the future.
+This method will block (further activity on the main thread) until data is available
+- which happens as soon as set_value has been called on the promise (from the thread).
+
+ We can also use future.wait().
+
+This is subtle, because you get a pause to be able to know that the future has the result you want
+
+through the promise( example use case: one may want to finish cycling through a for loop and then do an aggregation of all data received).
+
+And then the future can still "Get" the value using future.get() and one could see about using all the future.get(), together within a math expression or a string concatenation or something of that sort.
+There are 6 steps to use this promise-future coupling:
+
+    1. Decide and declare the promise with the desired type. promise<int> promisedIndex;
+    2. Write the worker method that takes in a promise, using rvalue reference &&.
+    3. Declare and assign a future of the same type like this: future<int> futureIndex = promisedIndex.get_future();
+    4. Declare and therefore start a thread, that in the worker method, in variadic template form, along with previously instantiated promise.
+    5. Where appropriate query the future, using future.get()/wait()/wait_for().
+    6. Lastly make sure to call thread.join();
+
+
+	
 
 -------------------------------------------------------------------------------------
 ### Jekyll Themes
