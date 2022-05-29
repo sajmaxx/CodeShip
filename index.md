@@ -294,6 +294,7 @@ The promise does the job of return results from worker method.
 
 Worker method that will work in a background thread using a promise is as  follows!
 
+```
 void doSomeWork(promise<string> && getbackName, string name, int age, int ssn)
 {
 
@@ -319,7 +320,8 @@ void main()
    workerLandThread.join();
 
 }
-
+```
+	
  Then, we start listening on the other end of the communication channel by calling the function get() on the future.
 This method will block (further activity on the main thread) until data is available
 - which happens as soon as set_value has been called on the promise (from the thread).
