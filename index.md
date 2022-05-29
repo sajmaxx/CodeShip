@@ -13,14 +13,15 @@ The heap memory has  a much larger size availability for developers to allocate 
 
 The stack memory is quicker to access and write into. The stack memory is order of magnitude smaller in limit of memory available for use. So great care has to be taken care in terms of choosing to use the stack and not maintain data on it for great lengths of time. Types declared on stack have the great advantage of being automatically garbage collected, as they go out of  scope.
 
+## Classic C++ Data Handling
 
-## C++ Value types versus Reference Types - true flexibility and control     
+### C++ Value types versus Reference Types - true flexibility and control     
 
 In C++ unlike some other languages, you can choose to instantiate either an object or a basic variable type either on a stack or the heap.
 
 This makes it interesting to be able to have those choices for instances of classes or structs, or basic types like int, float, double, char to be instantiated on heap or stack.
 
-## Value Type allocated on the heap
+### Value Type allocated on the heap
 Here is an example:
 ```
 int *winningNum = new int(777);
@@ -28,7 +29,7 @@ auto losingnum = *winningNum - 111;
 delete winningNum;
 ```
  
-## Reference Type allocated on the heap
+### Reference Type allocated on the heap
 ```
 Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
