@@ -441,6 +441,124 @@ int main()
 
 
 	
+## Mutexes and Locks
+
+This is a way to ensure sustained two way communication  between two threads.The concept consists of using a construct in C++ called a Mutex that has responsibility to lock and unlock a data resources that is shared between multiple threads.
+
+The header to include is:  #include<mutex>
+
+The type to use is Mutex.
+
+Mutex has two functions, which are Mutex.Lock() and Mutex.UnLock().
+
+Here is an example of how it is used, in it's simplest form.
+
+ I have also included an example of using timed_mutex within this code snippet:
+
+```
+#include <iostream>
+#include <mutex>
+#include <thread>
+#include <vector>
+#include<future>
+
+using namespace std;
+
+class Airplane
+{
+public:
+    Airplane(int flightno) : _flightNo(flightno) {}
+    int flightNumber ()
+    {
+        return _flightNo;
+    }
+private:
+    int _flightNo;
+};
+
+
+// simplification to only account for landing Airplanes.
+// showcases use of mutex lock and unlock to make sure there is no data race condition
+class AirportManagement
+{
+public:
+    AirportManagement(){}
+
+    void ShowLandedCount()
+    {
+        majorAirMutex.lock();
+        cout << " Major AirLine Planes landed count is " <<  _majorAirPlanes.size() << endl;
+        majorAirMutex.unlock();
+
+        if(minorAirMutex.try_lock_for(chrono::milliseconds(100)))
+        {
+            cout << " Minor Craft landed count is " << _smallCraftPlanes.size() << endl;
+            minorAirMutex.unlock();
+        }
+        
+    }
+
+    // This shows using a regular mutex lock and unlock, which ensures a strict lock and unock only after operation is completed
+    void MajorPlaneLandedAndTaken(Airplane &&majPlane)
+    {
+        majorAirMutex.lock();
+        _majorAirPlanes.emplace_back(move(majPlane));
+        majorAirMutex.unlock();
+    }
+
+ // this hows using a timed_mutex to "emulate" a lower priority to gather every object for operation
+    void MinorPlaneLandedAndTaken(Airplane &&smallPlane)
+    {
+        if(minorAirMutex.try_lock_for(chrono::milliseconds(222)))
+        {
+            this_thread::sleep_for(chrono::milliseconds(smallPlane.flightNumber()*100 + rand()));
+            _smallCraftPlanes.emplace_back(move(smallPlane));
+            minorAirMutex.unlock();
+        }
+    }
+
+private:
+    vector<Airplane> _majorAirPlanes;
+    vector<Airplane> _smallCraftPlanes;
+    mutex majorAirMutex;
+    timed_mutex minorAirMutex;
+};
+
+int main()
+{
+    shared_ptr<AirportManagement> airport(new AirportManagement());
+
+    vector<future<void>> futureMajorPlanes;
+
+    for(int i =0; i < 77; i++)
+    {
+        Airplane majPlane(i);
+        futureMajorPlanes.emplace_back(async(launch::async, &AirportManagement::MajorPlaneLandedAndTaken, airport, move(majPlane)));
+    }
+
+    vector<future<void>> futureSmallPlane;
+    for(int i = 0; i < 100; i++)
+    {
+        Airplane smallPlane(i);
+        futureSmallPlane.emplace_back(async(launch::async, &AirportManagement::MinorPlaneLandedAndTaken, airport, smallPlane));
+    }
+
+    for_each(futureSmallPlane.begin(), futureSmallPlane.end(), [](future<void> &ft){ ft.wait();});
+
+
+    for_each(futureMajorPlanes.begin(), futureMajorPlanes.end(), [](future<void> &ft){ ft.wait();});
+
+    
+
+    airport->ShowLandedCount();
+
+
+}
+```
+
+	
+
+	
 
 -------------------------------------------------------------------------------------
 ### Jekyll Themes
