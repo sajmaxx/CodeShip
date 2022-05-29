@@ -340,6 +340,102 @@ There are 6 steps to use this promise-future coupling:
     5. Where appropriate query the future, using future.get()/wait()/wait_for().
     6. Lastly make sure to call thread.join();
 
+	
+	
+## Futures and Async
+
+You can also use Promises with Async, instead to make use of tasks and the threadpool,
+instead of dealing with threads directly,  you use: std::future and std::async.
+
+With the future and async coupling, there is less boiler plate code, just 3 steps.
+We rely on system to decide through async, whether the task will work synchronously or use a parallel thread.
+Parallelism is left to the system to decide with this approach.
+Developer can take control and override using launch::deferred, launch::async and asyn::default.
+One more thing: the method called within async, would be a standard worker method with inputs and an output that doesn't need awareness of thread or task or async or promise structures.
+Also since there is no  direct interaction with thread, there is no join needed to do an extra check to make sure thread is closed.
+ With the Async Future setup we have 3 steps:
+
+    Define worker method with return type needed and inputs needed
+    Assign the future to the async call as shown below:
+        future<type> = async(workermethod); or using async() with a lambda method within it.
+    Call future.get(); 
+
+ ### An Example:
+    // AsyncJets.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#include <iostream>
+#include<thread>
+#include<future>
+#include<memory>
+#include<string>
+
+using namespace std;
+
+struct JetEngine
+{
+    string Company;
+    int modelNumber;
+    int numberofNozzle;
+    JetEngine()
+    {
+        
+    }
+    JetEngine(string comp, int model, int numberNozz) : Company(comp), modelNumber(model), numberofNozzle(numberNozz) { }
+
+};
+
+//Operation #1: Worker method to be used by async
+JetEngine MaketheSingleNozzleEngine(int compCode, int model)
+{
+    this_thread::sleep_for(chrono::milliseconds(3000));
+    switch(compCode)
+    {
+        case 1:
+            return JetEngine("GE Engine", model, 1);
+        case 2:
+            return JetEngine("Pratt", model, 1);
+        default:
+            return JetEngine("Merlin", model, 1);
+
+    }
+}
+
+int main()
+{
+    //Operation #2: Setting the future to the async
+    int companycode = 1;
+    int model = rand();
+    future<JetEngine> jetengineFuture1 = async(launch::async, MaketheSingleNozzleEngine, companycode, model);
+
+    companycode = 2;
+    model = rand();
+    future<JetEngine> jetengineFuture2 = async(launch::async, MaketheSingleNozzleEngine, companycode, model);
+
+    companycode = 3;
+    model = rand();
+    future<JetEngine> jetengineFuture3= async(launch::async, MaketheSingleNozzleEngine, companycode, model);
+
+    try
+    {
+        //Operation #3: Use the future.get
+        auto newJet3 = jetengineFuture3.get();
+        cout << newJet3.Company << endl;
+
+        auto newJet2 = jetengineFuture2.get();
+        cout << newJet2.Company << endl;
+
+        auto newJet1 = jetengineFuture1.get();
+        cout << newJet1.Company << endl;
+
+    }
+    catch(exception ee)
+    {
+        cout << "excepton is " << ee.what() << endl;
+    }
+
+}
+
+
 
 	
 
