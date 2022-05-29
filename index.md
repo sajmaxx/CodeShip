@@ -7,7 +7,7 @@
 
 ## Memory Management through hardware and software:
 
-   There are 2 kinds of  memory as every one knows, the stack and the heap.
+   There are 2 kinds of  memory when it comes to memory consumption in a programming language, the stack and the heap.
 
 The heap memory has  a much larger size availability for developers to allocate objects/types on.  Objects stored on the heap, need to be garbage collected programmatically( even with smart points  I consider this a memory garbage collection via code ... more on this later). The downside to using the heap is the memory access is slow.
 
