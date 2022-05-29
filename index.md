@@ -140,6 +140,93 @@ public:
 ```
 
 
+## Rule of 5:
+ Rule of 5, extends upon rule of 3, requiring two provide a move constructor and a move assignment operator using r value reference parameters (r value reference is a C++ 11 standard and here is an [article on it](http://thbecker.net/articles/rvalue_references/section_01.html).
+    The main purpose of enforcing rule of 5 on a class would be, if objects of these type would qualify and be suitable for transferring dyanmically allocated resources within it, from an "outgoing" object to a new/fresh incoming object. That is to say when there is a need to freshen up a new object and destroy an older instance.
+```
+ class UFO
+{
+    string _name;
+    int * _sightHeight;
+    int * _zoneIndex;
+    
+public:
+    UFO(int inputheight)
+    {
+        _name = "ufo";
+        _sightHeight = new int(inputheight);
+        _zoneIndex = new int(777);
+    }
+
+    ~UFO()
+    {
+        delete _sightHeight;
+    }
+
+    //Copy Consturctor
+    UFO(const UFO &incomingUFO)
+    {
+        _name = incomingUFO._name;
+        _sightHeight = new int(0);
+        *_sightHeight = *incomingUFO._sightHeight;
+        _zoneIndex = new int(0);
+        *_zoneIndex  = *incomingUFO._zoneIndex;
+    }
+
+    //Copy Assignment Operator
+    UFO &operator=(const UFO &incomingUFO)
+    {
+        if(this == &incomingUFO)
+            return *this;
+
+        _name = incomingUFO._name;
+        _sightHeight = new int(0);
+        *_sightHeight = *incomingUFO._sightHeight;
+        _zoneIndex = new int(0);
+        *_zoneIndex  = *incomingUFO._zoneIndex;
+        return *this;
+    }
+ 
+  
+    //Move constructor
+    UFO(UFO &&incomingUFO)
+    {
+        _name = incomingUFO._name;
+        _sightHeight = incomingUFO._sightHeight;
+        incomingUFO._sightHeight = nullptr;
+        _zoneIndex = incomingUFO._zoneIndex;
+        incomingUFO._zoneIndex = nullptr;
+    }
+ 
+ 
+    //  Move Assignment Operator
+    UFO &operator=(UFO &&incomingUFO)
+    {
+         if (this == &incomingUFO)
+        {
+            return *this;
+        }
+        
+        _name = incomingUFO._name;
+
+        if (_sightHeight )
+        {
+             delete _sightHeight;
+         }
+       _sightHeight = incomingUFO._sightHeight;
+        incomingUFO._sightHeight = nullptr;
+
+        if(_zoneIndex)
+        {
+             delete _zoneIndex;
+        }
+        _zoneIndex = incomingUFO._zoneIndex;
+        incomingUFO._zoneIndex = nullptr;     
+        
+    }
+} 
+```
+
 
 -------------------------------------------------------------------------------------
 ### Jekyll Themes
