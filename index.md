@@ -13,6 +13,8 @@ The heap memory has  a much larger size availability for developers to allocate 
 
 The stack memory is quicker to access and write into. The stack memory is order of magnitude smaller in limit of memory available for use. So great care has to be taken care in terms of choosing to use the stack and not maintain data on it for great lengths of time. Types declared on stack have the great advantage of being automatically garbage collected, as they go out of  scope.
 
+[For a detailed treatment on this subject, check out Stack and Heap Article](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
+
 ## Classic C++ Data Handling
 
 ### Raw Pointer Type and Reference Type Usage
@@ -34,7 +36,7 @@ void changeValueOf(int &affectedValue)
    affectedValue = affectedValue*3000 ;
 }
 
-int maint()
+int main()
 {
 	using namespace std;
    //...
@@ -64,7 +66,6 @@ Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
 delete hybdridCar;
 ```
-[For a detailed treatment on this subject, check out Stack and Heap Article](https://www.learncpp.com/cpp-tutorial/the-stack-and-the-heap/)
 
 
 ## Object behavior in C++,  the Rule of 3 and the  Rule of 5 
