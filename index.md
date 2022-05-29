@@ -15,6 +15,35 @@ The stack memory is quicker to access and write into. The stack memory is order 
 
 ## Classic C++ Data Handling
 
+### Raw Pointer Type and Reference Type Usage
+Pointers as we know (in modern C++ we call this a "raw pointer") point to an address of a resource.
+Pointers can access the type at an address by using the dereferencing syntax.
+```
+	int *value;
+	value = new int(777);
+	int justValue = *value;
+```
+Reference is another way of using pointer technology.
+Only caveat is,  the reference type variable ahs to be assigned on declaration. And the variable can only be assigned once.
+What is the advantage of using it?
+There is a syntactical convenience with using reference type as a parameter being passed in.
+```
+void changeValueOf(int &affectedValue)
+{
+
+   affectedValue = affectedValue*3000 ;
+}
+
+int maint()
+{
+	using namespace std;
+   //...
+   	int changePi = 111;
+      changeValueOf(changePi);
+      cout << changePi;
+}
+```
+
 ### C++ Value types versus Reference Types - true flexibility and control     
 
 In C++ unlike some other languages, you can choose to instantiate either an object or a basic variable type either on a stack or the heap.
