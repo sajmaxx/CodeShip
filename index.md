@@ -3,7 +3,7 @@
 
  This article touches upon several modern C++ concepts, that will enable one to make an application that is capable of using resources efficiently and support asynchronous programming. In some sub-topics, I do give a bit of pre-C++11 background, to make a point on how Modern C++ has progressed.
  
- ####Note: All code snippets included in this article can be compiled in VS 2022 Community Edition. I mostly use only C++ console template for all the samples shown.
+ #### Note: All code snippets included in this article can be compiled in VS 2022 Community Edition. I mostly use only C++ console template for all the samples shown.
 
 
 
