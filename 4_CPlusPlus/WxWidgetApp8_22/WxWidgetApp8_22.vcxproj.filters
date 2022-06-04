@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WXMainApp.h">
+    <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WXMainApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StartUpWindow.cpp">
+    <ClCompile Include="WxWidgetApp8_22.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
