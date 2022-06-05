@@ -597,6 +597,10 @@ The type condition_variable, has 3 methods.
 2. condition_variable.notify() - this notifies only a single waiting thread.
 3. condition_variable.notify_all() - this notifies and wakes up multiple threads.
 4. The condition_variable, works with a mutex, the unique_lock (used within the .wait()) and the lock_guard.
+Given the above definition and with this context in mind, the producer would do a lock_guard on a mutex, and do some work.
+Once that work is done, the producer will call the condition_variable.notify().
+The consumer is setup with a unique_lock on a mutex and  will be a in a wait state and blocked, till it recieves a signal from the notify, to check further for a condition if need be, to do some follow up work.
+
 	
 
 
