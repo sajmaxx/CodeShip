@@ -1,9 +1,0 @@
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.deps.json
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.dll
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\bin\Debug\netstandard2.0\StockAnalyzer.Core.pdb
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.csprojAssemblyReference.cache
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.AssemblyInfoInputs.cache
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.AssemblyInfo.cs
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.csproj.CoreCompileInputs.cache
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.dll
-C:\Users\sajan\source\repos\CodeShip\0_C#\Async\03\StockAnalyzer.Core\obj\Debug\netstandard2.0\StockAnalyzer.Core.pdb

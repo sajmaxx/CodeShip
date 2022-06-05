@@ -1,9 +1,0 @@
-﻿<Application x:Class="WPFApp4MVVM.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WPFApp4MVVM"
-             StartupUri="BootStrap/MainWindowView.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
-</Application>
