@@ -591,6 +591,7 @@ int main()
 ## Lightweight Implementation of Producer and Consumer Threads without Polling - using a condition_variable
 
 Modern C++ offers a type called condition_variable, that works to let multiple threads wait and respond based on conditions met.
+The Condition Variable is the communication channel between a thread that signals work has been done, and can have 1 or more other threads waiting for that signal, so they can resume work after that signal was recieved.
 The type condition_variable, has 3 methods.
 1. condition_variable.wait()
 	a. this method blocks further operation, till a notify/notify_all is invoked elsewhere (in another thread).
