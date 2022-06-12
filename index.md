@@ -608,9 +608,8 @@ Given the above definition and with this context in mind, the producer would do 
 	
 
 ### Example Console App, that showcases the use of a management of a message que using condition_variable, mutex, lock_guard and unique_lock
-	```
-	// MessageQueSimplify.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+```
+// MessageQueSimplify.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
 #include<deque>
