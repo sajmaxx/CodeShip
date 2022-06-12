@@ -603,6 +603,9 @@ Given the above definition and with this context in mind, the producer would do 
 	- The consumer is setup with a unique_lock on a mutex and  will be a in a wait state and blocked. 
 	- During the wait invoked through the condition_variable, the mutex is actually "unlocked".
 	- When the other thread, using the same condition_variable.notify()  is invoked, the "wait" springs back to action, resuming the lock to do work.
+5. In the context of using condition variable, with a unique_lock and a lock_guard, there is something to be said about those 2  types.
+	- The lock_guard/unique_lock is a RAII treatment of mutex locks and unloccks, similar to smart pointers doing automatic resource management.
+	
 
 	
 
