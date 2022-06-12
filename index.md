@@ -607,7 +607,100 @@ Given the above definition and with this context in mind, the producer would do 
   * The lock_guard/unique_lock is a RAII treatment of mutex locks and unloccks, similar to smart pointers doing automatic resource management.
 	
 
-	
+### Example Console App, that showcases the use of a management of a message que using condition_variable, mutex, lock_guard and unique_lock
+	```
+	// MessageQueSimplify.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include<deque>
+#include<mutex>
+
+using namespace std;
+
+
+class  MessageMgr
+{
+
+public:
+    MessageMgr()
+    {
+	    _alldoneWithAdding = false;
+        _counter = 0;
+        _addingCounter = 0;
+    }
+
+    void AllMessagesAdded()
+    {
+        int i;
+        for(i = 0; i < 500; i++)
+        {
+	       lock_guard<mutex> lockGrd(_locmutex);
+            dataQue.push_back(i);
+            _counter++;
+            _addingCounter++;
+            _conditionVaria.notify_one();  //this will wake up the waiting block
+            cout << "Added Message " << i << endl;
+        }
+
+        if (_addingCounter >= 499)
+        {
+			_alldoneWithAdding = true;
+        }
+	    
+    }
+
+    void GetEachNextMessageAndDoWork()
+    {
+        do
+        {
+            unique_lock<mutex> ulockforWait(_locmutex);
+            _conditionVaria.wait(ulockforWait,[this]()
+            {
+	           return (!dataQue.empty() ); 
+            });
+
+            int readNextDataIn = dataQue.front();
+            cout << "   Message Processed is # " << readNextDataIn << endl; 
+            dataQue.pop_front();
+        	_counter--;
+            cout << "       Counter is at "<< _counter << " And dequelength is at " <<  this->getDequeLength() << endl;
+	        if ( ( _alldoneWithAdding)  && (_counter == 0)) 
+                break;
+        }while(true);
+	     
+    }
+
+    int getDequeLength()
+    {
+	    return dataQue.size();
+    }
+
+private:
+    deque<int> dataQue;
+    mutex _locmutex;
+    condition_variable _conditionVaria;
+    bool _alldoneWithAdding;
+    int _counter, _addingCounter;
+
+};
+
+int main()
+{
+    MessageMgr mahMessageQueManager;
+
+    thread populateThread(&MessageMgr::AllMessagesAdded, &mahMessageQueManager);
+    thread doActionThread(&MessageMgr::GetEachNextMessageAndDoWork, &mahMessageQueManager);
+
+    populateThread.join();
+    doActionThread.join();
+    
+    cout << "Done all responses to messages triggered! And deque count is  " << mahMessageQueManager.getDequeLength()  << endl;
+    return 0;
+    
+}
+
+```
 
 
 
