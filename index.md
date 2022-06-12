@@ -595,14 +595,14 @@ The Condition Variable is the communication channel between a thread that signal
 The type condition_variable, has 3 methods.
 1. condition_variable.wait()
 	a. this method blocks further operation, till a notify/notify_all is invoked elsewhere (in another thread).
-2. condition_variable.notify() - this notifies only a single waiting thread.
+2. condition_variable.notify_one() - this notifies only a single waiting thread.
 3. condition_variable.notify_all() - this notifies and wakes up multiple threads.
 4. The condition_variable, works with a mutex, the unique_lock (used within the .wait()) and the lock_guard.
 Given the above definition and with this context in mind, the producer would do a lock_guard on a mutex, and do some work.
   * Once that work is done, the producer will call the condition_variable.notify().
   * The consumer is setup with a unique_lock on a mutex and  will be a in a wait state and blocked. 
   * During the wait invoked through the condition_variable, the mutex is actually "unlocked".
-  * When the other thread, using the same condition_variable.notify()  is invoked, the "wait" springs back to action, resuming the lock to do work.
+  * When the other thread, using the same condition_variable.notify_one()  is invoked, the "wait" springs back to action, resuming the lock to do work.
 5. In the context of using condition variable, with a unique_lock and a lock_guard, there is something to be said about those 2  types.
   * The lock_guard/unique_lock is a RAII treatment of mutex locks and unloccks, similar to smart pointers doing automatic resource management.
 	
