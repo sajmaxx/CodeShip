@@ -54,7 +54,7 @@ In C++ unlike some other languages, you can choose to instantiate either an obje
 This makes it interesting to be able to have those choices for instances of classes or structs, or basic types like int, float, double, char to be instantiated on heap or stack.
 
 
-### Value Type allocated on the stack
+### Value Type allocated on the Stack
 Here is an example:
 ```
 {
@@ -62,7 +62,7 @@ Here is an example:
 }
  
 ```
-### Value Type allocated on the heap
+### Value Type allocated on the Heap
 Here is an example:
 ```
 int *winningNum = new int(777);
@@ -79,7 +79,7 @@ delete winningNum;
 ```
 In the above code, since the object is declared via constructor call on the stack, the object is automatically freed, when it goes out of scope.
 
-### Reference Type allocated on the heap
+### Reference Type allocated on the Heap
 ```
 Car *hybridCar = new Car(122, "Ferrari", 2022);
 hybdridCar->ShowData();
