@@ -59,6 +59,7 @@ Here is an example:
 ```
 {
 	int winningVal = 888;
+	float array[4] = {4.1, 4.2, 3.3, 4.4};
 }
  
 ```
