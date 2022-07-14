@@ -71,6 +71,13 @@ delete winningNum;
 ```
  
 ### Reference Type allocated on the heap
+```
+{
+	Car sportsCar(911, Porsche, 1979);
+	sportsCar.ShowData();
+}
+```
+In the above code, since the object is declared via constructor call on the stack, the object is automatically freed, when it goes out of scope.
 
 ### Reference Type allocated on the heap
 ```
