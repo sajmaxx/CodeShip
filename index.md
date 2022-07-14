@@ -54,7 +54,7 @@ In C++ unlike some other languages, you can choose to instantiate either an obje
 This makes it interesting to be able to have those choices for instances of classes or structs, or basic types like int, float, double, char to be instantiated on heap or stack.
 
 
-### Value Type allocated on the heap
+### Value Type allocated on the stack
 Here is an example:
 ```
 {
@@ -70,7 +70,7 @@ auto losingnum = *winningNum - 111;
 delete winningNum;
 ```
  
-### Reference Type allocated on the heap
+### Reference Type allocated on the Stack
 ```
 {
 	Car sportsCar(911, Porsche, 1979);
