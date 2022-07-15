@@ -327,6 +327,71 @@ Here we shall examples of how we can move data for consumption by a worker threa
 With multi-threading in C++, one can send data forward from a main thread to a worker-thread using 2 main ways. One way is to use  lambda functions., the other way is to use variadic template technique.
 
 I will cover both examples soon.
+	
+### Thread Example for C++11 onwards.
+Calling more than 1 thread, by using vector<thread>!
+```
+#include <vector>
+#include <iostream>
+#include <thread>
+
+int main(0
+{
+	auto lamfun = [](double area)
+	{
+		auto volume = area *100;
+	}
+
+
+
+	vector<thread> threads;
+
+	for(int i = 0; i < 10, i++)
+	{
+		threads.push_back(thread(lambda, 100));
+
+	}
+
+	for(int i = 0; i < 10, i++)
+	{
+		threads[i].join();
+	}
+	
+
+	cout <<< " Resume Main Work" << endl;
+
+}
+
+```
+					    
+### Since C++20, we have the jthread, that eliminates the need for the join, following RAII principles, in that the threads automatically rejoin with main thread, on destruction.
+					    
+```
+#include <vector>
+#include <iostream>
+#include <thread>
+
+int main(0
+{
+	auto lamfun = [](double area)
+	{
+		auto volume = area *100;
+	}
+
+
+
+	vector<jthread> jthreads;
+
+	for(int i = 0; i < 10, i++)
+	{
+		jthreads.push_back(jthread(lambda, 100));
+
+	}
+
+	cout <<< " Resume Main Work" << endl;
+
+}					    
+```
 
 ### Futures and Promises
 
