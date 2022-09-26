@@ -364,35 +364,6 @@ int main(0
 
 ```
 					    
-### Since C++20, we have the jthread, that eliminates the need for the join, following RAII principles, in that the threads automatically rejoin with main thread, on destruction.
-					    
-```
-#include <vector>
-#include <iostream>
-#include <thread>
-
-int main(0
-{
-	auto lamfun = [](double area)
-	{
-		auto volume = area *100;
-	}
-
-
-
-	vector<jthread> jthreads;
-
-	for(int i = 0; i < 10, i++)
-	{
-		jthreads.push_back(jthread(lambda, 100));
-
-	}
-
-	cout <<< " Resume Main Work" << endl;
-
-}					    
-```
-
 ### Futures and Promises
 
 The future and promise coupling is one way of sending data back from a worker thread to the main thread. This coupling structure, involves a repeated set of boiler plate code, along with an accompanying worker method that has to be aware of a promise via a  move semantic parameter.
@@ -791,5 +762,33 @@ int main()
 	3. jthread
 
 
+### Since C++ 20, we have the jthread, that eliminates the need for the join, following RAII principles, in that the threads automatically rejoin with main thread, on destruction.
+					    
+```
+#include <vector>
+#include <iostream>
+#include <thread>
+
+int main(0
+{
+	auto lamfun = [](double area)
+	{
+		auto volume = area *100;
+	}
+
+
+
+	vector<jthread> jthreads;
+
+	for(int i = 0; i < 10, i++)
+	{
+		jthreads.push_back(jthread(lambda, 100));
+
+	}
+
+	cout <<< " Resume Main Work" << endl;
+
+}					    
+```
 
 
