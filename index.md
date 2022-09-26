@@ -785,5 +785,11 @@ int main()
 
 ```
 
+## Interesting Features in C++ 20 (at least interesting to me :-))
+	1. Using Modules
+	2. Spaceship Operator <=>
+	3. jthread
+
+
 
 
