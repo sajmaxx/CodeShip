@@ -1,0 +1,5 @@
+# ninja log v5
+1	745	1664333478074349169	CMakeFiles/traffic_simulation.dir/src/TrafficObject.cpp.o	ec21246c6d0a0709
+1	1004	1664333478334369695	CMakeFiles/traffic_simulation.dir/src/TrafficLight.cpp.o	c7522a88a7dc327d
+1	1862	1664333479194437569	CMakeFiles/traffic_simulation.dir/src/Intersection.cpp.o	7001bbd34711da87
+1	1991	1664333479322447658	CMakeFiles/traffic_simulation.dir/src/Graphics.cpp.o	68ded423b2d8fcb0
