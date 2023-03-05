@@ -1,0 +1,3 @@
+/home/simonm/repos/CodeShip/4_CPlusPlus/CLionProjects/ModCProg_Futures/cmake-build-debug/CMakeFiles/ModCProg_Futures.dir
+/home/simonm/repos/CodeShip/4_CPlusPlus/CLionProjects/ModCProg_Futures/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/simonm/repos/CodeShip/4_CPlusPlus/CLionProjects/ModCProg_Futures/cmake-build-debug/CMakeFiles/rebuild_cache.dir

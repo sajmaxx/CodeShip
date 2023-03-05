@@ -1,0 +1,3 @@
+/home/simonm/CLionProjects/Modern_Vectors/cmake-build-debug/CMakeFiles/Modern_Vectors.dir
+/home/simonm/CLionProjects/Modern_Vectors/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/simonm/CLionProjects/Modern_Vectors/cmake-build-debug/CMakeFiles/rebuild_cache.dir

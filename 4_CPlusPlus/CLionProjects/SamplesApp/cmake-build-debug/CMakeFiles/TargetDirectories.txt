@@ -1,0 +1,3 @@
+/home/simonm/CLionProjects/SamplesApp/cmake-build-debug/CMakeFiles/SamplesApp.dir
+/home/simonm/CLionProjects/SamplesApp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/simonm/CLionProjects/SamplesApp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

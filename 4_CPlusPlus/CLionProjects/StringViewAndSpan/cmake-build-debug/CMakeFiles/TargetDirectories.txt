@@ -1,0 +1,3 @@
+/home/simonm/CLionProjects/StringViewAndSpan/cmake-build-debug/CMakeFiles/StringViewAndSpan.dir
+/home/simonm/CLionProjects/StringViewAndSpan/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/simonm/CLionProjects/StringViewAndSpan/cmake-build-debug/CMakeFiles/rebuild_cache.dir
