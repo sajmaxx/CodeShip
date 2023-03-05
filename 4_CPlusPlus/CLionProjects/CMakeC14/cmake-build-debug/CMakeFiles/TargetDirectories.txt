@@ -1,3 +1,0 @@
-/home/simonm/CLionProjects/CMakeC14/cmake-build-debug/CMakeFiles/CMakeC14.dir
-/home/simonm/CLionProjects/CMakeC14/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/simonm/CLionProjects/CMakeC14/cmake-build-debug/CMakeFiles/rebuild_cache.dir
