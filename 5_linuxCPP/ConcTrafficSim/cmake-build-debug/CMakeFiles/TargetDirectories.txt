@@ -1,3 +1,0 @@
-/home/simonm/repos/CodeShip/5_linuxCPP/ConcTrafficSim/cmake-build-debug/CMakeFiles/traffic_simulation.dir
-/home/simonm/repos/CodeShip/5_linuxCPP/ConcTrafficSim/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/simonm/repos/CodeShip/5_linuxCPP/ConcTrafficSim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
