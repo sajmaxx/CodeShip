@@ -1,3 +1,0 @@
-/home/simonm/CLionProjects/ModCProgExp1/cmake-build-debug/CMakeFiles/ModCProgExp1.dir
-/home/simonm/CLionProjects/ModCProgExp1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/simonm/CLionProjects/ModCProgExp1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

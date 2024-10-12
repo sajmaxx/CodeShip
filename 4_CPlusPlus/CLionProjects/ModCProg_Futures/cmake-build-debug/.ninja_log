@@ -1,7 +1,0 @@
-# ninja log v5
-1	1270	1677975574315825444	CMakeFiles/ModCProg_Futures.dir/main.cpp.o	c3609ed5bb0d4a39
-1270	1353	1677975574399825907	ModCProg_Futures	a7de6ecbc8d14454
-0	34	1679170745899253175	build.ninja	9673aac5eddfc450
-0	3	0	clean	6256c034d056ee7
-0	1464	1679170748087282941	CMakeFiles/ModCProg_Futures.dir/main.cpp.o	c3609ed5bb0d4a39
-1464	1546	1679170748171284084	ModCProg_Futures	a7de6ecbc8d14454

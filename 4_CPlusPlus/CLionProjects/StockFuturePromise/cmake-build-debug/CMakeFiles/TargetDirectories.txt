@@ -1,3 +1,0 @@
-/home/simonm/CLionProjects/StockFuturePromise/cmake-build-debug/CMakeFiles/StockFuturePromise.dir
-/home/simonm/CLionProjects/StockFuturePromise/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/simonm/CLionProjects/StockFuturePromise/cmake-build-debug/CMakeFiles/rebuild_cache.dir
