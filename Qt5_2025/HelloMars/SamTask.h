@@ -19,8 +19,15 @@ public:
     QString GetName() const;
     bool IsCompleted() const;
 
+public slots:
+    void Rename();
+
 private:
     Ui::SamTask *ui;
+
+signals:
+    void Removed(SamTask* task);
+
 };
 
 #endif // SAMTASK_H

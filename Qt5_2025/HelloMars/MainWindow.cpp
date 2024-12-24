@@ -22,9 +22,19 @@ void MainWindow::addTaskSlot()
     {
         SamTask* task = new SamTask(nameDaTask);
         m_Tasks.append(task);
+
+        connect(task, &SamTask::Removed, this, &MainWindow::RemoveTask);
+
         ui->tasksLayout->addWidget(task);
     }
 
+}
+
+void MainWindow::RemoveTask(SamTask *task)
+{
+    m_Tasks.removeOne(task);
+    ui->tasksLayout->removeWidget(task);
+    delete task;
 }
 
 MainWindow::~MainWindow()

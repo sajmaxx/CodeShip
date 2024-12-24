@@ -22,5 +22,6 @@ public slots:
 private:
     Ui::MainWindow *ui;
     QVector<SamTask*> m_Tasks;
+    void RemoveTask(SamTask* task);
 };
 #endif // MAINWINDOW_H

@@ -1,5 +1,6 @@
 #include "SamTask.h"
 #include "ui_SamTask.h"
+#include <QInputDialog>
 
 SamTask::SamTask(const QString& name, QWidget *parent) :
     QWidget(parent),
@@ -7,6 +8,9 @@ SamTask::SamTask(const QString& name, QWidget *parent) :
 {
     ui->setupUi(this);
     SetName(name);
+    connect(ui->editItemButton, &QPushButton::clicked, this, &SamTask::Rename);
+    connect(ui->removeItemButton, &QPushButton::clicked, [this] { emit Removed(this);} );
+
 }
 
 SamTask::~SamTask()
@@ -28,3 +32,15 @@ bool SamTask::IsCompleted() const
 {
     return ui->milkBuyCheckBox->isChecked();
 }
+
+void SamTask::Rename()
+{
+    bool allOkMan;
+    QString nameDaTask = QInputDialog::getText(this, tr("Add Task"), tr("Task Name"),
+                                               QLineEdit::Normal, tr("Untitled Task"), &allOkMan);
+    if(allOkMan && !nameDaTask.isEmpty())
+    {
+        SetName(nameDaTask);
+    }
+}
+
